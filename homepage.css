@@ -1,0 +1,313 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+body{
+    margin: 0px;
+    overflow-x: hidden;
+
+}
+.uppergrey{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 40px;
+}
+
+.Navigation{
+    max-width: 100%;
+    display: flex;
+}
+
+.logo-nav{
+    margin: 0% 30% 0% 5%;
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+}
+#logo {
+    max-width: 200px;
+    max-height: 140px;
+}
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 70%;
+}
+.nav-button{
+    margin: 5%;
+    background-image: linear-gradient(to right, #d9d9d9, #737373);
+    background-size: auto;
+    padding: 7px 30px 7px 30px;
+    border-radius: 7px;
+    color: white;
+    border: none;
+
+}
+
+.lower-grey{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-cart{
+    display: flex;
+    align-items: center;
+}
+.user-cart div{
+    margin: 5%;
+}
+.user-cart a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.user-cart img{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3px
+}
+.banner{
+    margin: 3% 0 3% 0;
+    width: 100%;
+    background-image: url(Homepage\ assets/banner.png);
+    background-repeat: no-repeat;
+    height: 240px;
+    display: flex;
+    align-items: center;
+
+}
+
+.banner h2 {
+    margin: 3%;
+}
+.banner p {
+    margin: 0 3% 0 3%;
+}
+
+.lower-text{
+    width: 100%;
+    margin: 0% 0 5% 0;
+}
+.lower-text h2{
+    margin: 0 2% 0 2%;
+}
+
+.products-login{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 0 5% 0;
+}
+
+.product-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.prod{
+    margin: 0 2% 0 2%;
+    box-shadow: 5px 5px 10px #d9d9d9;
+    border-radius: 7px;
+    
+}
+#prod-img{
+    height: 155px;
+    width: 200px;
+    border-radius: 7px 7px 0 0;
+    margin: none;
+    
+}
+.item-desc {
+    background-color: #d9d9d9;
+    width: 200px;
+    height: 45px;
+    border-radius: 0 0 7px 7px;
+    display: flex;
+    align-items: center;
+    margin: none;
+    
+    
+}
+.item-desc div{
+    height: 38px;
+    border: solid 1px;
+}
+.item-desc button{
+    background: none;
+    border: none;
+}
+.item-desc p{
+    flex: 2;
+    font-size: 10px;
+    margin: 0 0 0 5%;
+}
+.login-container{
+    margin: 1% 0 0 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.login {
+    height: 200px;
+    width: 500px;
+    background-color: #d9d9d9E6;
+    border-radius: 7px;
+    color: white;
+    font-size: 12px;
+    
+    
+}
+.login form{
+    display: flex;
+    align-items: center;
+    padding: 5%;
+}
+#backgroundlogo{
+    position: absolute;
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    opacity: .5;
+}
+.login-left div{
+    margin: 0 0 10% 0;
+    color: black;
+}
+.login-left input{
+    border: none;
+    border-radius: 7px;
+}
+.login-left button{
+    border: none;
+    color: white;
+    border-radius: 7px;
+    background-color: black;
+    width: 120px;
+    height: 20px;
+}
+.login-mid{
+    margin: 0 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-mid div{
+    border: 1px solid white;
+    height: 40px;
+    width: 0px;
+}
+.login-right div{
+        width: 120px;
+        height: 20px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+        margin: 0 0 5% 0;
+}
+footer {
+    margin: 0px;
+    width: 100%;
+}
+.footer-container{
+    width: 100%;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+}
+#logo-footer{
+    width: 100px;
+    height: 100px;
+    margin: 0 5% 0 0;
+}
+.contact{
+    margin: 0 2% 0 0;
+    width: 100%;
+}
+.message, .phone, .coins, .human, .handshake{
+    display: flex;
+    align-items: center;
+    margin: 0 5% 0 0;
+    font-size: 10px;
+    width: 100%;
+
+}
+#message, #phone, #coins, #human, #handshake{
+    width: 30px;
+    height: 30px;
+    margin-right: 3%;
+}
+.popuplogin {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 1001;
+}
+
+/* .overlay {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 68.5dvh;
+    position: absolute;
+    z-index: 2;
+    background: #000000B3;
+} */
+
+.overlay{
+    display: none;
+    opacity:0.8;
+    background: #000000B3;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+
+/* .overlay2 {
+    display: none;
+    top: 500px;
+    left: 0;
+    width: 100%;
+    height: 75dvh;
+    position: absolute;
+    z-index: 2;
+    background: #000000B3;
+} */
+.closebtn {
+    position: absolute;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    top: 38.5vh;
+    left: 133vh;
+}
+
+.overlay.active {
+    display: flex;
+}
+.overlay2.active{
+    display: flex;
+} 
+.popuplogin.active{
+    display: flex;
+}

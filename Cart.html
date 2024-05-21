@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <link rel="stylesheet" href="../jedgeesmain/Cart.css" type="text/css">
+            <title>Jedgees</title>
+        </head>
+        <body>
+            <div class="uppergrey"></div>
+            <section class="Navigation"><!--Navigation-->
+                    <div class="logo-nav">
+                        <img src="Homepage assets/LOGO.png" id="logo"><!--logo-->
+                        <div class="Nav"><!--Navigation-->
+                               <div><a onclick="popuplogin()"><b>Home</b></a></div>
+                               <div><a onclick="popuplogin()"><b>Products</b></a></div>
+                               <div><a onclick="popuplogin()"><b>Customs</b></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-cart"> <!--user and cart*-->
+                        
+                        <div>
+                            <a onclick="popuplogin()">
+                                <img src="Homepage assets/Userpf.png">
+                                <p>User</p>
+                            </a>
+                        </div>
+                        
+                        
+                        <div>
+                            <a onclick="popuplogin()">
+                                <img src="Homepage assets/Cart.png">
+                                <p>Cart</p>
+                            </a>
+                        </div>
+    
+                    </div>
+            </section>
+            <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
+            <br> 
+            <div class="Cart">
+                <div class="Container">
+                        <div class="Fline">
+                            <img src="Homepage assets/Cart.png" id="Cart1"> 
+                            <p>Paper Print</p> 
+                            <a onclick="popuplogin()"><p><b>x</b></p></a>
+                        </div>
+                        <div class="Sline">
+                            <input type="checkbox" name="checkbox" value="checkbox">
+                            <img src="Homepage assets/order.png"> 
+                            <ul class="Item">
+                                <p id="Item">Item Name</p>
+                                <p id="Edit">Edit</p>
+                                <p id="Pesos">P 150</p> 
+                            </ul>
+                             <p id="quantity"> - | 1 | + </p>
+                             <!--tite-->
+                            <div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+            <div class="Cart">
+                <div class="Container">
+                        <div class="Fline">
+                            <img src="Homepage assets/Cart.png" id="Cart1"> 
+                            <p>Tarpulins</p> 
+                            <a onclick="popuplogin()"><p><b>x</b></p></a>
+                        </div>
+                        <div class="Sline">
+                            <input type="checkbox" name="checkbox" value="checkbox">
+                            <img src="Homepage assets/order.png"> 
+                            <ul class="Item">
+                                <p id="Item">Item Name</p>
+                                <p id="Edit">Edit</p>
+                                <p id="Pesos">P 150</p> 
+                            </ul>
+                             <p id="quantity"> - | 1 | + </p>
+                            <div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+            <div class="Cart">
+                <div class="Container">
+                        <div class="Fline">
+                            <img src="Homepage assets/Cart.png" id="Cart1"> 
+                            <p>Poster</p> 
+                            <a onclick="popuplogin()"><p><b>x</b></p></a>
+                        </div>
+                        <div class="Sline">
+                            <input type="checkbox" name="checkbox" value="checkbox">
+                            <img src="Homepage assets/order.png"> 
+                            <ul class="Item">
+                                <p id="Item">Item Name</p>
+                                <p id="Edit">Edit</p>
+                                <p id="Pesos">P 150</p> 
+                            </ul>
+                             <p id="quantity"> - | 1 | + </p>
+                            <div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+            <div class="checkout">
+                <div class="out">
+                <input type="checkbox" name="checkbox" value="checkbox">
+                <p id="All">ALL</p>
+                <p id="Sub">Subtotal: </p>
+                <p id="total">P 12,345.06</p>
+                <p id="check"> <b>CHECK OUT </b> </p>
+                </div>
+            </div>
+            <br>
+        </body>
+        <footer><!--footer-->
+            <div class="footer-container">
+                 <img id="logo-footer" src="Homepage assets/LOGO.png">
+                 <p class="contact">CONTACT US: </p>            
+                     <div class="phone">
+                         <img src="Homepage assets/phone.png" id="phone">
+                         <p>Telephone: 794-27-67</p>
+                     </div>
+                     <div class="message">
+                        <img src="Homepage assets/message.png" id="message">
+                        <p>jedgees18digitalprinting@gmail.com</p>
+                    </div>
+                     <div class="coins">
+                         <img src="Homepage assets/coins.png" id="coins">
+                         <p>Service Pricing</p>
+                     </div>
+                    <div class="human">
+                        <img src="Homepage assets/human.png" id="human">
+                        <p>About Jedgees</p>
+                    </div>
+                     <div class="handshake">
+                         <img src="Homepage assets/handshake.png" id="handshake">
+                         <p>Service Offered</p>
+                     </div>
+             </div>
+        </footer>
+        <script>
+            function popuplogin(){
+                document.getElementsByClassName("popuplogin layout layout2").classList.toggle("active");
+            }
+        </script>
+
+</html>
