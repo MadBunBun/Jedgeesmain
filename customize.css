@@ -1,0 +1,201 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+body{
+    margin: 0px;
+    overflow-x: hidden;
+
+}
+.uppergrey{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 40px;
+}
+
+.Navigation{
+    max-width: 100%;
+    display: flex;
+}
+
+.logo-nav{
+    margin: 0% 30% 0% 5%;
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+}
+#logo {
+    max-width: 200px;
+    max-height: 140px;
+}
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 70%;
+}
+.Nav div{
+    margin: 5%;
+    background-image: linear-gradient(to right, #d9d9d9, #737373);
+    background-size: auto;
+    padding: 7px 30px 7px 30px;
+    border-radius: 7px;
+    color: white;
+    border: none;
+
+}
+
+.lower-grey{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-cart{
+    display: flex;
+    align-items: center;
+}
+.user-cart div{
+    margin: 5%;
+}
+.user-cart a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.user-cart img{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3px
+}
+
+/*footer*/
+
+footer {
+    margin: 0px;
+    width: 100%;
+}
+.footer-container{
+    width: 100%;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+}
+#logo-footer{
+    width: 100px;
+    height: 100px;
+    margin: 0 5% 0 0;
+}
+.contact{
+    margin: 0 2% 0 0;
+    width: 100%;
+}
+.message, .phone, .coins, .human, .handshake{
+    display: flex;
+    align-items: center;
+    margin: 0 5% 0 0;
+    font-size: 10px;
+    width: 100%;
+
+}
+#message, #phone, #coins, #human, #handshake{
+    width: 30px;
+    height: 30px;
+    margin-right: 3%;
+}
+#backgroundlogo{
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+#backgroundlogo img{
+    opacity: 0.7;
+    width: 700px;
+    height: 700px;
+}
+.paperprints{
+    width: 90%;
+    padding: 2%;
+    background-color: #d9d9d9E6;
+    border-radius: 7px;
+}
+.forms{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidepanel{
+    width: 100px;
+    height: 300px;
+    background-color: white;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+.form-left{
+    flex: 3;
+    display: flex;
+    justify-content: start;
+}
+.form-left div{
+    margin: 0 3% 0 3%;
+}
+#textinputs{
+    width: 160px;
+    height: 25px;
+    border-radius: 7px;
+    border: none;
+    margin: 2%;
+}
+#dropdowns{
+    width: 160px;
+    height: 25px;
+    border-radius: 7px;
+    border: none;
+    margin: 2%;
+}
+#textfields{
+    border: none;
+    border-radius: 7px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2% 0 2% 0;
+}
+.Tarpaulins{
+    width: 90%;
+    padding: 2%;
+    background-color: #b9b9b9E6;
+    border-radius: 7px;
+}
+.Posters{
+    width: 90%;
+    padding: 2%;
+    background-color: #898989E6;
+    border-radius: 7px;
+    color: white;
+}
+.sidepanel button{
+    border: none;
+    background: none;
+}
+.sidepanel img{
+    width: 50px;
+    height: 50px;
+}
+
