@@ -19,9 +19,10 @@
 
         } else {
             $_SESSION['session'] = 'invalid';
-            echo 'Invalid Credentials';
+            // echo 'Invalid Credentials';
+            echo "<script>alert('Invalid Credentials!')</script>";
+            echo "<script>window.location.href = '/jedgeesmain/Homepage-Index-offline.php\#relogin';</script>";
         }
     }
-
 }
 ?>
