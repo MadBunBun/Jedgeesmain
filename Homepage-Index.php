@@ -7,10 +7,11 @@ require('./backend/session.php');
 <!DOCTYPE html>
 <html>
         <head>
-            <link rel="stylesheet" href="stylesheets/homepage.css" type="text/css">
+            <link rel="stylesheet" href="stylesheets/homepage-session.css" type="text/css">
             <title>Jedgees</title>
         </head>
         <body>
+            
             <div class="uppergrey"></div>
             <section class="Navigation"><!--Navigation-->
                     <div class="logo-nav">
@@ -20,6 +21,9 @@ require('./backend/session.php');
                                 <button class="ol nav-button">Products</button>
                                 <button class="ol nav-button">Customs</button>
                         </div>
+                        <form method="POST" action="backend/logout.php">
+                            <button name="logout">Logout</button>
+                        </form>
                     </div>
                     
                     <div class="user-cart"> <!--user and cart*-->
@@ -95,56 +99,13 @@ require('./backend/session.php');
                             <div></div><button type="button"><img src="Homepage assets/arrowbtn.png" id="product-arrow"></button>
                         </div>
                     </div>
-                </div>
-                <div class="login-container"><!--login-->
-                    <div class="login">
-                        <form>
-                        <div class="login-left">
-                            <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email" ></div>
-                            <div><label>PASSWORD:</label><br></b><input type="password" class="password" name="User_Password"></div>
-                            <button type="submit" name="login"><b>LOGIN</b></button>
-                        </div>
-                        <div class="login-mid">
-                            <div></div>
-                            <h2>OR</h2>
-                            <div></div>
-                        </div>
-                        <div class="login-right">
-                        <a class="sn" href="Signup.php" style="text-decoration: none; color: white;"><div><p><b>SIGN UP</b></p></div></a>
-                        <a class="sn" href="" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
-                        </div>
-                        </form>
-
-                        <form method="POST" action="backend/logout.php">
-                            <button name="logout">Logout</button>
-                        </form>
-                    </div>
                     
-                    <img src="Homepage assets/LOGO.png" id="backgroundlogo">
+                </div>
+                <div class="background-logo">
+                <img src="Homepage assets/LOGO.png" id="backgroundlogo">
                 </div>
                 
             </section>
-            <div class="popuplogin">
-                <div class="login">
-                    <form>
-                    <div class="login-left">
-                        <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email" ></div>
-                        <div><label>PASSWORD:</label><br></b><input type="password" class="password" name="User_Password"></div>
-                        <button type="submit" name="login"><b>LOGIN</b></button>
-                    </div>
-                    <div class="login-mid">
-                        <div></div>
-                        <h2>OR</h2>
-                        <div></div>
-                    </div>
-                    <div class="login-right">
-                    <a class="sn" href="Signup.php" style="text-decoration: none; v"><div><p><b>SIGN UP</b></p></div></a>
-                        <a class="sn" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
-                    </div>
-                    </form>
-                    <button type="button">X</button>
-                </div>
-            </div>
         </body>
         <footer><!--footer-->
             <div class="footer-container">
@@ -165,11 +126,12 @@ require('./backend/session.php');
                     <div class="human">
                         <img src="Homepage assets/human.png" id="human">
                         <p>About Jedgees</p>
-                    </div>
+                  /div>
                      <div class="handshake">
                          <img src="Homepage assets/handshake.png" id="handshake">
                          <p>Service Offered</p>
                      </div>
              </div>
+             
         </footer>
 </html>

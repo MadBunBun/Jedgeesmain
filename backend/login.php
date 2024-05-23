@@ -15,13 +15,13 @@
 
         if (mysqli_num_rows($sqlvalidate) > 0) {
             $_SESSION['session'] = 'valid';
-            echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php';</script>";
+            
 
         } else {
             $_SESSION['session'] = 'invalid';
             // echo 'Invalid Credentials';
             echo "<script>alert('Invalid Credentials!')</script>";
-            echo "<script>window.location.href = '/jedgeesmain/Homepage-Index-offline.php\#relogin';</script>";
+            
         }
     }
 }

@@ -16,6 +16,8 @@
         echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php';</script>";    
     }
 
+    $invalid_session_condition = $_SESSION['session'] = 'invalid' || empty($_SESSION['session']);
+
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +116,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="login-container"><!--login-->
+
+                
+                    <div class="login-container">
                     <div class="login" id="relogin">
                         <form method="POST" action="backend/login.php">
                         <div class="login-left">
@@ -134,12 +138,15 @@
                         </form>
                     </div>
                     
-                    <img src="Homepage assets/LOGO.png" id="backgroundlogo">
+                    <img src="Homepage assets/LOGO.png" id="backgroundlogo">       
                 </div>
                 
+                
             </section>
-            
-            <div class="popuplogin" id="popuplogin">
+            <?php 
+
+            if($_SESSION['session'] = 'invalid' || empty($_SESSION['session'])) {
+                echo '<div class="popuplogin" id="popuplogin">
                 <div class="login">
                     <form method="post" action="backend/login.php">
                     <div class="login-left">
@@ -164,7 +171,12 @@
 
             </div>
                 <div class="overlay" id="popuplogin"></div>
-                <div class="overlay2" id="popuplogin"></div>
+                <div class="overlay2" id="popuplogin"></div>';
+            }
+
+
+            ?>
+            
         </body>
         <footer><!--footer-->
             <div class="footer-container">
