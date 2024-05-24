@@ -1,8 +1,16 @@
+<?php
+
+require('./backend/session.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/customize.css" type="text/css">
         <title>Jedgees</title>
+
+        
     </head>
     <body>
         <div class="uppergrey"></div>
@@ -10,9 +18,9 @@
                     <div class="logo-nav">
                         <img src="Customize assests/LOGO.png" id="logo"><!--logo-->
                         <div class="Nav"><!--Navigation-->
-                                <div><a><b>Home</b></a></div>
-                                <div><a><b>Customizes</b></a></div>
-                                <div><a><b>Customs</b></a></div>
+                                <button id="home-redirect"><b>Home</b></s></button>
+                                <button><b>Products</b></button>
+                                <button id="customs-redirect"><b>Customs</b></b>
                         </div>
                     </div>
                     
@@ -193,6 +201,16 @@
                      <p>Service Offered</p>
                  </div>
          </div>
+
+         <script>
+            document.getElementById("customs-redirect").addEventListener("click", function() {
+                    window.location.href = "./Customize-index.php";
+                });
+
+                document.getElementById("home-redirect").addEventListener("click", function() {
+                    window.location.href = "./Homepage-index.php";
+                });
+         </script>
     </footer>
     
 </html>
