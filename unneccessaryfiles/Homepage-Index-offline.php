@@ -12,17 +12,21 @@
         $_SESSION['session'] = 'invalid';
     }
 
-    if ($_SESSION['session'] == 'valid'){
-        echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php';</script>";    
-    }
+
+    // if ($_SESSION['session'] == 'valid'){
+    //     echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php';</script>";    
+    // }
+
+    $invalid_session_condition = $_SESSION['session'] == 'invalid' || empty($_SESSION['session']);
 
 ?>
 
 <!DOCTYPE html>
 <html>
         <head>
-            <link rel="stylesheet" href="stylesheets/homepage.css" type="text/css">
+            
             <title>Jedgees</title>
+
         </head>
         <body>
             <div class="uppergrey"></div>
@@ -57,7 +61,7 @@
             </section>
             <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
 
-            <section class="banner"><!--banner-->
+            <section class="banner">
                 <div class="bannertext-wrapper">
                     <h2>
                     <b>Feeling Professional? We print that.</b>
@@ -71,6 +75,19 @@
             <section class="lower-text">
                 <h2>JedgeesPrint Picks: Popular and Unbeatable.</h2>
             </section>
+            
+            <?php 
+
+            if($invalid_session_condition) {
+                echo '
+
+                <style>
+
+                .product-container {
+                    padding-left: 2%;
+                }
+                </style>
+                
             <section class="products-login">
                  <div class="product-wrapper"><!--products-->
                     <div class="prod">
@@ -114,8 +131,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="login-container"><!--login-->
-                    <div class="login">
+
+                
+                    <div class="login-container">
+                    <div class="login" id="relogin">
                         <form method="POST" action="backend/login.php">
                         <div class="login-left">
                             <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email"></div>
@@ -134,12 +153,13 @@
                         </form>
                     </div>
                     
-                    <img src="Homepage assets/LOGO.png" id="backgroundlogo">
+                    <img src="Homepage assets/LOGO.png" id="backgroundlogo">       
                 </div>
                 
+                
             </section>
-            
-            <div class="popuplogin" id="popuplogin">
+                
+                <div class="popuplogin" id="popuplogin">
                 <div class="login">
                     <form method="post" action="backend/login.php">
                     <div class="login-left">
@@ -164,7 +184,68 @@
 
             </div>
                 <div class="overlay" id="popuplogin"></div>
-                <div class="overlay2" id="popuplogin"></div>
+                <div class="overlay2" id="popuplogin"></div>';
+            } 
+            
+            
+            else {
+                echo '
+                <link rel="stylesheet" href="stylesheets/homepage-session.css" type="text/css">
+                <section class="products-login">
+                 <div class="product-wrapper"><!--products-->
+                    <div class="prod">
+                        <img src="Homepage assets/homepage-Product1.jpg" id="prod-img">
+                        <div class="item-desc">
+                            <p>
+                                Rushed Posters
+                                <br>₱90
+                            </p>
+                            <div></div><button type="button"><img src="Homepage assets/arrowbtn.png" id="product-arrow"></button>
+                        </div>
+                    </div>   
+                    <div class="prod">
+                        <img src="Homepage assets/homepage-Product2.jpg" id="prod-img">
+                        <div class="item-desc">
+                            <p>
+                                Standing Tarpaulin
+                                <br>₱200
+                            </p>
+                            <div></div><button type="button"><img src="Homepage assets/arrowbtn.png" id="product-arrow"></button>
+                        </div>
+                    </div>
+                    <div class="prod">
+                        <img src="Homepage assets/homepage-Product3.jpg" id="prod-img">
+                        <div class="item-desc">
+                            <p>
+                                Research Manuscripts
+                                <br>₱100-200
+                            </p>
+                            <div></div><button type="button"><img src="Homepage assets/arrowbtn.png" id="product-arrow"></button>
+                        </div>
+                    </div>
+                    <div class="prod">
+                        <img src="Homepage assets/homepage-Product4.jpg" id="prod-img">
+                        <div class="item-desc">
+                            <p>
+                                Posters
+                                <br>₱200
+                            </p>
+                            <div></div><button type="button"><img src="Homepage assets/arrowbtn.png" id="product-arrow"></button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="background-logo">
+                <img src="Homepage assets/LOGO.png" id="backgroundlogo">
+                </div>
+                
+            </section>
+           
+           ';}
+
+
+            ?>
+            
         </body>
         <footer><!--footer-->
             <div class="footer-container">

@@ -5,6 +5,6 @@
 
     session_destroy();
 
-    echo "<script>window.location.href = '/jedgeesmain/Homepage-Index-offline.php'</script>";
+   
 ?>
 

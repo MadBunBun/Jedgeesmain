@@ -1,0 +1,416 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+body{
+    margin: 0px;
+}
+.uppergrey{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 40px;
+}
+
+.Navigation{
+    max-width: 100%;
+    display: flex;
+}
+
+.logo-nav{
+    margin: 0% 30% 0% 5%;
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+}
+.logo {
+    max-width: 200px;
+    max-height: 140px;
+}
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 70%;
+}
+.Nav div{
+    margin: 5%;
+    background-image: linear-gradient(to right, #d9d9d9, #737373);
+    background-size: auto;
+    padding: 7px 30px 7px 30px;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+}
+
+.lower-grey{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-cart{
+    display: flex;
+    align-items: center;
+}
+.user-cart div{
+    margin: 5%;
+}
+.user-cart a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.user-cart img{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3px
+}
+
+.midjedgees-userinfo{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    opacity: 0.5;
+}
+
+.midjedgees-rectangle{
+    position: absolute;
+    top: 350px;
+    margin-left: 500px;
+    width: 1050px;
+    height: 725px;
+    background-color: #d9d9d9B3;
+    border-radius: 10px;
+}
+
+.first-name {
+    position: absolute;
+    margin-left: 250px;
+    top: 40px;
+    justify-content: space-between;
+}
+
+.city {
+    position: absolute;
+    margin-left: 280px;
+    top: 0px;
+}
+
+.zip {
+    position: absolute;
+    margin-left: 275px;
+    top: 0px;
+}
+
+.code {
+    position: absolute;
+    margin-left: 30px;
+    top: 0px;
+}
+
+.juan {
+    position: absolute;
+    margin-left: -585px;
+    top: 40px;
+}
+
+.new {
+    position: absolute;
+    margin-left: 280px;
+    top: 0px;
+}
+
+.york {
+    position: absolute;
+    margin-left: 39px;
+    top: 0px;
+}
+
+.zip-8008 {
+    position: absolute;
+    margin-left: 235px;
+    top: 0px;
+}
+
+.middle-initial {
+    position: absolute;
+    margin-left: -555px;
+    top: 40px;
+}
+
+.barangay {
+    position: absolute;
+    margin-left: 280px;
+    top: 0px;
+}
+
+.contact {
+    position: absolute;
+    margin-left: 275px;
+    top: 0px;
+}
+
+.number {
+    position: absolute;
+    margin-left: 65px;
+    top: 0px;
+}
+
+.middle-d {
+    position: absolute;
+    margin-left: -345px;
+    top: 35px;
+}
+
+.cubao {
+    position: absolute;
+    margin-left: 280px;
+    top: 0px;
+}
+
+.contact {
+    position: absolute;
+    margin-left: 1200px;
+    top: 0px;
+}
+
+.number {
+    position: absolute;
+    margin-left: 320px;
+    top: 0px;
+}
+
+.last-name {
+    position: absolute;
+    margin-left: -555px;
+    top: 35px;
+}
+
+.street {
+    position: absolute;
+    margin-left: 280px;
+    top: 0px;
+}
+
+.no {
+    position: absolute;
+    margin-left: 105px;
+    top: 0px;
+}
+
+.dela-cruz {
+    position: absolute;
+    margin-left: -385px;
+    top: 35px;
+}
+
+.dimagiba {
+    position: absolute;
+    margin-left: 280px;
+    top: 0px;
+}
+
+.st {
+    position: absolute;
+    margin-left: 75px;
+    top: 0px;
+}
+
+.lot {
+    position: absolute;
+    margin-left: 25px;
+    top: 0px;
+}
+
+.lot-6969 {
+    position: absolute;
+    margin-left: 30px;
+    top: 0px;
+}
+
+.order-rectangle {
+    position: absolute;
+    top: 100px;
+    margin-left: -325px;
+    width: 234px;
+    height: 28px;
+    background-color: #d9d9d9;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.edit-rectangle {
+    position: absolute;
+    top: -1px;
+    margin-left: 260px;
+    width: 178px;
+    height: 28px;
+    background-color: #d9d9d9;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.order-text {
+    position: absolute;
+    top: -13px;
+    margin-left: -225px;
+}
+
+.edit {
+    position: absolute;
+    top: 0px;
+    margin-left: 275px;
+}
+
+.profile {
+    position: absolute;
+    top: 0px;
+    margin-left: 35px;
+}
+
+.recent {
+    position: absolute;
+    top: 40px;
+    margin-left: -600px;
+    font-size: 30px;
+}
+
+.purchases {
+    position: absolute;
+    top: 0px;
+    margin-left: 105px;
+    font-size: 30px;
+}
+    
+.product-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.prod{
+    margin: 0 2% 0 0;
+    box-shadow: 5px 5px 10px #989898;
+    border-radius: 7px;
+}
+#prod-img{
+    height: 155px;
+    width: 200px;
+    border-radius: 7px 7px 0 0;
+    margin: none;
+    
+}
+.item-desc {
+    background-color: #d9d9d9;
+    width: 200px;
+    height: 45px;
+    border-radius: 0 0 7px 7px;
+    display: flex;
+    align-items: center;
+    margin: none;
+}
+.item-desc div{
+    height: 38px;
+    border: solid 1px;
+}
+.item-desc button{
+    background: none;
+    border: none;
+}
+.item-desc p{
+    flex: 2;
+    font-size: 10px;
+    margin: 0 0 0 5%;
+}
+
+footer {
+    margin: 0px;
+    width: 100%;
+}
+.footer-container{
+    width: 100%;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+}
+#logo-footer{
+    width: 100px;
+    height: 100px;
+    margin: 0 5% 0 0;
+}
+.contact{
+    margin: 0 2% 0 0;
+    width: 100%;
+}
+.message, .phone, .coins, .human, .handshake{
+    display: flex;
+    align-items: center;
+    margin: 0 5% 0 0;
+    font-size: 10px;
+    width: 100%;
+
+}
+#message, #phone, #coins, #human, #handshake{
+    width: 30px;
+    height: 30px;
+    margin-right: 3%;
+}
+.popuplogin {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 3;
+}
+.overlay {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 68.5dvh;
+    position: absolute;
+    z-index: 2;
+    background: #000000B3;
+}
+.overlay2 {
+    display: none;
+    top: 500px;
+    left: 0;
+    width: 100%;
+    height: 75dvh;
+    position: absolute;
+    z-index: 2;
+    background: #000000B3;
+}
+.closebtn {
+    position: absolute;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    top: 38.5vh;
+    left: 133vh;
+}
+
+.overlay.active {
+    display: flex;
+}
+.overlay2.active{
+    display: flex;
+} 
+.popuplogin.active{
+    display: flex;
+}
