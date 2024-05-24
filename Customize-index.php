@@ -73,7 +73,13 @@ require('./backend/session.php');
                                     <input type="file" id="docu" name="documentfile"><br><br>
                                     <label for="bind">Type of bind:</label><br><br>
                                     <input type="radio" id="bind" name="bind" value="Ring bind"><label for="ringbind">Ring bind</label><br><br>
-                                    <input type="radio" id="bind" name="bind" value="Book bind"><label for="bookbind">Book bind</label>
+                                    <input type="radio" id="bind" name="bind" value="Book bind"><label for="bookbind">Book bind</label><br><br>
+                                    <input type="radio" id="bind" name="bind" value="none"><label for="none">None</label><br><br>
+                                    <label for="colors">Type of print:</label><br><br>
+                                    <select name="typecolor" id="dropdowns">
+                                        <option value="Colored">Colored</option>
+                                        <option value="B&W">B&W</option>
+                                    </select><br><br>
                                 </div>
                                 <div>
                                     <label for="instructions" id="instructions">Special instructions:</label><br><br>
@@ -143,15 +149,17 @@ require('./backend/session.php');
                                 <option value="Copy">Copy Paper</option>
                                 <option value="Vellum">Vellum Paper</option>
                             </select><br><br>
-                            <label for="papersize">Size of Tarpaulin:</label><br><br>
+                            <label for="papersize">Size of Poster:</label><br><br>
                             <input type="number" name="sizecopies" id="textinputs">
                         </div>
                         <div>
                             <label for="docu">Upload your document:</label><br><br>
                             <input type="file" id="docu" name="documentfile"><br><br>
-                            <label for="bind">With stand:</label><br><br>
-                            <input type="radio" id="bind" name="stand" value="Yes"><label for="Yes">Yes</label><br><br>
-                            <input type="radio" id="bind" name="stand" value="No"><label for="No">No</label>
+                            <label for="colors">Type of print:</label><br>
+                            <select name="typecolor" id="dropdowns">
+                                <option value="Colored">Colored</option>
+                                <option value="B&W">B&W</option>
+                            </select><br><br>
                         </div>
                         <div>
                             <label for="instructions" id="instructions">Special instructions:</label><br><br>
