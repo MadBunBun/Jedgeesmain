@@ -1,5 +1,5 @@
 <?php
-    require('./database.php');
+    require('./backend/database.php');
 
     session_start();
 
@@ -16,11 +16,13 @@
         if (mysqli_num_rows($sqlvalidate) > 0) {
             $_SESSION['session'] = 'valid';
             
+            
 
         } else {
             $_SESSION['session'] = 'invalid';
             // echo 'Invalid Credentials';
             echo "<script>alert('Invalid Credentials!')</script>";
+            
             
         }
     }
