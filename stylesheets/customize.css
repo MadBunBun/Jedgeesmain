@@ -131,14 +131,14 @@ footer {
 }
 .forms{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
 }
 .sidepanel{
     width: 100px;
     height: 300px;
     background-color: white;
-    margin-right: 10%;
+    /* margin-right: 10%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -197,5 +197,32 @@ footer {
 .sidepanel img{
     width: 50px;
     height: 50px;
+}
+
+.total {
+    margin-left: 0 !important;
+    position: relative;
+    bottom: 14%;
+    width: 400;
+}
+
+.total-info-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.total-price {
+    align-self: flex-end;
+}
+
+.total-dash {
+    text-align: center;
+}
+
+.subtotal-container {
+    margin: 0 !important;
+    display: flex;
+    justify-content: space-between;
 }
 
