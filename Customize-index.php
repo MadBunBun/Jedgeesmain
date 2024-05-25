@@ -83,7 +83,7 @@ require('./backend/database.php');
                                     <input type="file" id="docu" name="documentfile"><br><br>
                                     <label for="bind">Type of bind:</label><br><br>
                                     <input type="radio" class="binding" id="bind1" name="bind" value="Small Ring Bind"><label for="smallringbind">Small Ring Bind</label><br><br>
-                                    <input type="radio" class="binding" id="bind2" name="bind" value="Long Ring Bind"><label for="bigringbind">Big Ring Bind</label><br><br>
+                                    <input type="radio" class="binding" id="bind2" name="bind" value="Big Ring Bind"><label for="bigringbind">Big Ring Bind</label><br><br>
                                     <input type="radio" class="binding" id="bind3" name="bind" value="Book Bind"><label for="bookbind">Book bind</label><br><br>
                                     <input type="radio" class="binding" id="bind4" name="bind" value="None" required><label for="none">None</label><br><br>
                                    <br><br>
@@ -110,7 +110,7 @@ require('./backend/database.php');
                                             <p class="total-dash">-</p>
                                             <p class="total-dash">-</p>
                                             <p id="pagesprice"></p>
-                                            <p id="bindprice"></p>
+                                            <p class="total-dash" id="bindprice"></p>
                                             <p>
                                         </div>
                                     </div>
@@ -135,9 +135,10 @@ require('./backend/database.php');
                             ?>
                             <div class="sidepanel">
                                 <button type="reset" name="reset"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
-                                <button style="display: none;" type="submit" name="submit" id="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
-
                                 <button style="display: block;" type="button" id="checkprice"><img src="Customize assests/Pay.png"><br><p>Check Price</p></button>
+                                <button style="display: block;" type="submit" name="submit" id="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
+
+                                
                                
                             </div>
                          </form>
@@ -312,15 +313,18 @@ require('./backend/database.php');
                                                 var bigringpercent = 15;
                                                 var total = 0;
                                                 var pagesInt = parseFloat(pages.value);
+                                                var bindprice = 0;
+                                                
 
-                                                checkpriceButton.style.display = 'none';
-                                                submit.style.display = 'block';
+                                                // checkpriceButton.style.display = 'none';
+                                                // submit.style.display = 'block';
                                                 resibo.style.display = 'block';
                                                 
                 
                                                 if (paper.value === bondpaper) {
                                                     if (bw === color.value) {
                                                     if (short === size.value) {
+
                                                         totalpages += (pagesInt * 2.00);
                                                     }
                                                     else if(a4 === size.value) {
@@ -503,13 +507,16 @@ require('./backend/database.php');
 
                                                 if (bind.value === smallbind) {
                                                     total+= (totalpages + smallringpercent);
+                                                    bindprice += smallringpercent;
                                                 }
                                                 else if (bind.value === bigbind) {
                                                     total += (totalpages + bigringpercent);
+                                                    bindprice += bigringpercent;
                                                 }
 
                                                 else if (bind.value === bookbind) {
                                                     total += (totalpages + (totalpages * bookbindpercent));
+                                                    bindprice += (totalpages * bookbindpercent);
 
                                                 }
                                                 else {
@@ -519,10 +526,12 @@ require('./backend/database.php');
                                                 document.getElementById('paper').textContent = paper.value;
                                                 document.getElementById('color').textContent = color.value;
                                                 document.getElementById('size').textContent = size.value;
-                                                document.getElementById('pagesprice').textContent = pages.value;
+                                                document.getElementById('numpage').textContent = pages.value;
                                                 document.getElementById('binding').textContent = bind.value;
                                                 document.getElementById('totalprice').textContent = total;
-
+                                                document.getElementById('bindprice').textContent = bindprice.toFixed(2);
+                                                document.getElementById('pagesprice').textContent = totalpages.toFixed(2);
+                                                
                                                 
                                         });
                                         });
