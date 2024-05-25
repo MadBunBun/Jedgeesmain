@@ -43,6 +43,10 @@ body{
     border: none;
 
 }
+.Nav a{
+    text-decoration: none;
+    color: white;
+}
 
 .lower-grey{
     background-color: #d9d9d9;
@@ -120,7 +124,9 @@ footer {
 
 .title {
     margin: 2%;
-
+    justify-content: center;
+    display: flex;
+    width: 100%;
 } 
 
 .prod{
@@ -129,6 +135,7 @@ footer {
     border-radius: 7px;
     width: 200px;
     height: 200px;
+    font-size: 20px;
 }
 #prod-img{
     height: 155px;
@@ -162,3 +169,14 @@ footer {
     font-size: 10px;
     margin: 0 0 0 5%;
 }
+.product_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    flex-wrap: wrap;
+}
+.product_container div{
+    margin: 2%;
+}
+
