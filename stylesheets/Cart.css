@@ -39,6 +39,10 @@ body{
     border-radius: 7px;
     color: white;
 }
+.Nav a{
+    text-decoration: none;
+    color: white;
+}
 
 .lower-grey{
     background-color: #d9d9d9;
@@ -70,157 +74,9 @@ body{
     border-radius: 20px;
     padding: 3px
 }
-
-.Cart{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.Container {
-    height: 110px;
-    width: 500px;
-    background-color: #d9d9d9E6;
-    border-radius: 7px;
-    color: rgb(0, 0, 0);
-}
-#Cart1{
-    width: 20px;
-    height: 20px;
-}
-.Fline{
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-.Fline p{
-    font-size: 12px;
-    margin-left: 5px;
-}
-.Fline a{
-    display: flex;
-    width: 15px;
-    height: 15px;
-    border: 1px solid black;
-    border-radius: 50px;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
-}
-.Sline{
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-.Sline img{
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
-}
-.Sline p{
-    font-size: 10px;
-}
-.Sline ul{
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-.Item #Item {
-    margin-top: 0px;
-}
-.Item #Edit {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    
-}
-.Item #Pesos {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: green;
-}
-.wrapper {
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: 20px;
-    margin-top: 20px;
-}
-.wrapper span{
-    font-size: 10px;
-    text-align: center;
-    margin: 2px;
-    cursor: pointer;
-}
-.wrapper span.num {
-    border-right: 1px solid rgb(0,0,0,0.2);
-    border-left: 1px solid rgb(0,0,0,0.2);
-    pointer-events: none;
-}
-.wrapper span.num2 {
-    border-right: 1px solid rgb(0,0,0,0.2);
-    border-left: 1px solid rgb(0,0,0,0.2);
-    pointer-events: none;
-}
-.wrapper span.num3 {
-    border-right: 1px solid rgb(0,0,0,0.2);
-    border-left: 1px solid rgb(0,0,0,0.2);
-    pointer-events: none;
-}
-/*
-#quantity {
-    display: flex;
-    margin-left: auto;
-    margin-right: 20px;
-    margin-top: 40px;
-    border: 1px solid black;
-}
-*/
-.checkout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.out {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 300px;
-    background-color: #d9d9d9E6;
-    border-radius: 7px;
-    color: rgb(0, 0, 0);
-}
-.out #All{
-    font-size: 11px;
-    margin-left: 8px;
-    margin-right: 10px;
-}
-.out #Sub{
-    font-size: 10px;
-    margin-right: 10px;
-}
-.out #total{
-    font-size: 10px;
-    margin-right: 10px;
-    color: red;
-}
-.out #check{
-    font-size: 11px;
-    color: white;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    
-}
 footer {
     margin: 0px;
     width: 100%;
-    margin-bottom: auto;
 }
 .footer-container{
     width: 100%;
@@ -250,52 +106,95 @@ footer {
     height: 30px;
     margin-right: 3%;
 }
-.popuplogin {
-    display: none;
-    position: absolute;
+.background{
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
-    top: 0px;
-    z-index: 3;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.7;
 }
-.overlay {
-    display: none;
-    top: 0;
-    left: 0;
+.background img{
+    width: 700px;
+    height: 700px;
+}
+.Cartlist{
     width: 100%;
-    height: 68.5dvh;
-    position: absolute;
-    z-index: 2;
-    background: #000000B3;
+    margin: 5% 0 5% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.overlay2 {
-    display: none;
-    top: 500px;
-    left: 0;
+.cartcontainer{
+    width: 65%;
+    height: 150px;
+    background-color: #d9d9d9E6;
+    display: flex;
+    justify-content: flex-start;
+    gap: 7%;
+    padding: 1%;
+    border-radius: 7px;
+    margin: 2%;
+}
+.cartcontainer p{
+    color: red;
+}
+.checkout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 75dvh;
-    position: absolute;
-    z-index: 2;
-    background: #000000B3;
+    margin: 3% 0 3% 0;   
+    
 }
-.closebtn {
-    position: absolute;
-    border-radius: 100px;
+.checkoutcontainer{
+    background-color: #d9d9d9E6;
+    width: 500px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    border-radius: 7px;
+
+}
+.checkoutcontainer button{
+    background-image: linear-gradient(to right,#d9d9d9, black);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    height: 25px;
+
+}
+#cartimage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    
+}
+#cartimage img{
+    width: 70px;
+    height: 70px;
+    border-radius: 7px;
+}
+.prodinfo {
+    flex: 2;
+}
+.cartcontainer button{
     background-color: black;
     color: white;
-    z-index: 1;
-    top: 38.5vh;
-    left: 133vh;
+    border-radius: 100px;
 }
+.empty{
+    background-color: #d9d9d9E6;
+    height: 700px;
+    width: 700px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.overlay.active {
-    display: flex;
-}
-.overlay2.active{
-    display: flex;
-} 
-.popuplogin.active{
-    display: flex;
 }
