@@ -10,6 +10,8 @@ require('./backend/database.php');
     <head>
         <link rel="stylesheet" href="stylesheets/customize.css" type="text/css">
         <title>Jedgees</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts/customize-print.js"></script>
 
         
     </head>
@@ -47,7 +49,7 @@ require('./backend/database.php');
             <section class="container">
                         <div class="paperprints">
                             <h1>Paper Prints Customization</h1>
-                        <form class="forms">
+                        <form class="forms" method="POST" action="backend/customize-print.php" enctype="multipart/form-data" id="form-print">
                             <div class="form-left">
                                     <div>
                                     <label for="papertype">Type of paper:</label><br><br>
@@ -80,7 +82,7 @@ require('./backend/database.php');
                                 </div>
                                 <div>
                                     <label for="docu" required>Upload your document:</label><br><br>
-                                    <input type="file" id="docu" name="documentfile"><br><br>
+                                    <input type="file" id="docu" name="file"><br><br>
                                     <label for="bind">Type of bind:</label><br><br>
                                     <input type="radio" class="binding" id="bind1" name="bind" value="Small Ring Bind"><label for="smallringbind">Small Ring Bind</label><br><br>
                                     <input type="radio" class="binding" id="bind2" name="bind" value="Big Ring Bind"><label for="bigringbind">Big Ring Bind</label><br><br>
@@ -90,8 +92,12 @@ require('./backend/database.php');
                                 </div>
                                 <div>
                                     <label for="instructions" id="instructions">Special instructions:</label><br><br>
-                                    <textarea name="instructions" id="textfields" rows="13" cols="50" placeholder="Write down your special instructions"></textarea>
+                                    <textarea name="instructions" id="instructions" rows="13" cols="50" placeholder="Write down your special instructions" value="None"></textarea>
                                 </div>
+
+                                <input type="hidden" name="bindprice" id="bindpricehidden" value="">
+                                <input type="hidden" name="totalpages" id="totalpages" value="">
+                                <input type="hidden" name="total" id="total" value="">
 
                                 <div class="total" id="resibo" style="display: none;">
                                     <h1>Confirm Order: </h1>
@@ -113,6 +119,8 @@ require('./backend/database.php');
                                             <p class="total-dash" id="bindprice"></p>
                                             <p>
                                         </div>
+
+
                                     </div>
                                     <hr>
                                     <div class="subtotal-container">
@@ -122,21 +130,11 @@ require('./backend/database.php');
                                     
                                 </div>
                             </div>
-                            <?php 
-                                if (isset($_POST['submit'])) {
-                                    $paper = $_POST['papertype'];
-                                    $color = $_POST['typecolor'];
-                                    $size = $_POST['size'];
-                                    $pages = $_POST['numpages'];
-                                    $docu = $_POST['documentfile'];
-                                    $bind = $_POST['bind'];
-                                } 
-
-                            ?>
+                            
                             <div class="sidepanel">
-                                <button type="reset" name="reset"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
+                                <button type="reset" name="reset" id="reset-print"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
                                 <button style="display: block;" type="button" id="checkprice"><img src="Customize assests/Pay.png"><br><p>Check Price</p></button>
-                                <button style="display: block;" type="submit" name="submit" id="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
+                                <button style="display: block;" type="submit" name="submit_print" id="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
 
                                 
                                
@@ -271,272 +269,10 @@ require('./backend/database.php');
                 });
          </script>
 
-                                    <script>
-                                            document.addEventListener('DOMContentLoaded', function() {
-                                            var paper = document.getElementById('papertype');
-                                            var color = document.getElementById('typecolor');
-                                            var size = document.getElementById('printsize');
-                                            var pages = document.getElementById('pages');
-                                            var resibo = document.getElementById('resibo');
-                                            
-                                            
-                                            
-                                            var checkpriceButton = document.getElementById('checkprice');
-                                            var submit = document.getElementById('submit');
+             
 
-                                            var bondpaper = "Bond Paper";
-                                            var copypaper = "Copy Paper";
-                                            var vellumpaper = "Vellum Paper";
-                                            var photopaper = "Photo Paper";
-                                            var mattepaper = "Matte Paper";
 
-                                            var colored = "Colored";
-                                            var bw = "B&W";
-
-                                            var a4 = "A4";
-                                            var short = "Short";
-                                            var long = "Long";
-
-                                            
-
-                                            var smallbind = "Small Ring Bind";
-                                            var bigbind = "Big Ring Bind";
-                                            var bookbind = "Book Bind";
-                                            var none = "None";
-
-                                            
-                                            checkpriceButton.addEventListener('click', function() {
-                                                var bind = document.querySelector('input[name="bind"]:checked');
-                                                var totalpages = 0;
-                                                var bookbindpercent = .25;
-                                                var smallringpercent = 10;
-                                                var bigringpercent = 15;
-                                                var total = 0;
-                                                var pagesInt = parseFloat(pages.value);
-                                                var bindprice = 0;
-                                                
-
-                                                // checkpriceButton.style.display = 'none';
-                                                // submit.style.display = 'block';
-                                                resibo.style.display = 'block';
-                                                
-                
-                                                if (paper.value === bondpaper) {
-                                                    if (bw === color.value) {
-                                                    if (short === size.value) {
-
-                                                        totalpages += (pagesInt * 2.00);
-                                                    }
-                                                    else if(a4 === size.value) {
-                                                        totalpages += (pagesInt * 2.00);
-                                                    }
-                                                    else if(long === size.value) {
-                                                        totalpages += (pagesInt * 3.00);
-                                                    }
-                                                    else {
-                                                        console.log("Must be some Error 1");
-                                                    }
-                                                }
-
-                                                    else if (colored === color.value) {
-                                                    if (short === size.value) {
-                                                        totalpages += (pagesInt * 5.00);
-                                                    }
-                                                    else if(a4 === size.value) {
-                                                        totalpages += (pagesInt * 5.00);
-                                                    }
-                                                    else if(long === size.value) {
-                                                        totalpages += (pagesInt * 10.00);
-                                                    }
-                                                    else {
-                                                        console.log("Must be some Error 1.2");
-                                                    }
-                                                }
-
-                                                    else {
-                                                    console.log("Must be some Error 2");
-                                                }
-                                                }
-
-                                                else if (paper.value === copypaper) {
-                                                    if (bw === color.value) {
-                                                    if (short === size.value) {
-                                                        totalpages += (pagesInt * 1.50);
-                                                    }
-                                                    else if(a4 === size.value) {
-                                                        totalpages += (pagesInt * 1.50);
-                                                    }
-                                                    else if(long === size.value) {
-                                                        totalpages += (pagesInt * 2.00);
-                                                    }
-                                                    else {
-                                                        console.log("Must be some Error 3");
-                                                    }
-                                                }
-
-                                                    else if (colored === color.value) {
-                                                    if (short === size.value) {
-                                                        totalpages += (pagesInt * 3.00);
-                                                    }
-                                                    else if(a4 === size.value) {
-                                                        totalpages += (pagesInt * 3.00);
-                                                    }
-                                                    else if(long === size.value) {
-                                                        totalpages += (pagesInt * 8.00);
-                                                    }
-                                                    else {
-                                                        console.log("Must be some Error 3.2");
-                                                    }
-                                                }
-
-                                                    else { 
-                                                    console.log("Must be some Error 4");
-                                                }
-
-                                                }
-
-                                                else if (paper.value === vellumpaper) {
-                                                    if (bw === color.value) {
-                                                        if (short === size.value) {
-                                                            totalpages += (pagesInt * 10.00);
-                                                        }
-                                                        else if(a4 === size.value) {
-                                                            totalpages += (pagesInt * 10.00);
-                                                        }
-                                                        else if(long === size.value) {
-                                                            totalpages += (pagesInt * 13.00);
-                                                        }
-                                                        else {
-                                                            console.log("Must be some Error 4.1");
-                                                        }
-                                                }
-
-                                                else if (colored === color.value) {
-                                                    if (short === size.value) {
-                                                        totalpages += (pagesInt * 13.00);
-                                                    }
-                                                    else if(a4 === size.value) {
-                                                        totalpages += (pagesInt * 13.00);
-                                                    }
-                                                    else if(long === size.value) {
-                                                        totalpages += (pagesInt * 16.00);
-                                                    }
-                                                    else {
-                                                        console.log("Must be some Error 4.2");
-                                                    }
-                                                }
-
-                                                else { 
-                                                    console.log("Must be some Error 5");
-                                                }
-                                            }
-
-                                                else if (paper.value === photopaper){
-                                                    if (bw === color.value) {
-                                                        if (short === size.value) {
-                                                            totalpages += (pagesInt * 6.00);
-                                                        }
-                                                        else if(a4 === size.value) {
-                                                            totalpages += (pagesInt * 6.00);
-                                                        }
-                                                        else if(long === size.value) {
-                                                            totalpages += (pagesInt * 10.00);
-                                                        }
-                                                        else {
-                                                            console.log("Must be some Error 5.1");
-                                                        }
-                                                    }
-
-                                                    else if (colored === color.value) {
-                                                        if (short === size.value) {
-                                                            totalpages += (pagesInt * 12.00);
-                                                        }
-                                                        else if(a4 === size.value) {
-                                                            totalpages += (pagesInt * 12.00);
-                                                        }
-                                                        else if(long === size.value) {
-                                                            totalpages += (pagesInt * 15.00);
-                                                        }
-                                                        else {
-                                                            console.log("Must be some Error 5.2");
-                                                        }
-                                                    }
-
-                                                    else { 
-                                                        console.log("Must be some Error 6");
-                                                    }
-
-                                                }
-                                           
-                                                else if (paper.value === mattepaper){
-                                                    if (bw === color.value) {
-                                                        if (short === size.value) {
-                                                            totalpages += (pagesInt * 12.00);
-                                                        }
-                                                        else if(a4 === size.value) {
-                                                            totalpages += (pagesInt * 12.00);
-                                                        }
-                                                        else if(long === size.value) {
-                                                            totalpages += (pagesInt * 15.00);
-                                                        }
-                                                        else {
-                                                            console.log("Must be some Error 6.1");
-                                                        }
-                                                    }
-
-                                                else if (colored === color.value) {
-                                                    if (short === size.value) {
-                                                        totalpages += (pagesInt * 15.00);
-                                                    }
-                                                    else if(a4 === size.value) {
-                                                        totalpages += (pagesInt * 15.00);
-                                                    }
-                                                    else if(long === size.value) {
-                                                        totalpages += (pagesInt * 20.00);
-                                                    }
-                                                    else {
-                                                        console.log("Must be some Error 6.2");
-                                                    }
-                                                }
-
-                                                else { 
-                                                    console.log("Must be some Error 7");
-                                                }
-
-                                            }
-
-                                                if (bind.value === smallbind) {
-                                                    total+= (totalpages + smallringpercent);
-                                                    bindprice += smallringpercent;
-                                                }
-                                                else if (bind.value === bigbind) {
-                                                    total += (totalpages + bigringpercent);
-                                                    bindprice += bigringpercent;
-                                                }
-
-                                                else if (bind.value === bookbind) {
-                                                    total += (totalpages + (totalpages * bookbindpercent));
-                                                    bindprice += (totalpages * bookbindpercent);
-
-                                                }
-                                                else {
-                                                    total += totalpages;
-                                                }
-
-                                                document.getElementById('paper').textContent = paper.value;
-                                                document.getElementById('color').textContent = color.value;
-                                                document.getElementById('size').textContent = size.value;
-                                                document.getElementById('numpage').textContent = pages.value;
-                                                document.getElementById('binding').textContent = bind.value;
-                                                document.getElementById('totalprice').textContent = total;
-                                                document.getElementById('bindprice').textContent = bindprice.toFixed(2);
-                                                document.getElementById('pagesprice').textContent = totalpages.toFixed(2);
-                                                
-                                                
-                                        });
-                                        });
-
-                                        </script>
+                                    
     </footer>
     
 </html>
