@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesheets/Purchase.css" type="text/css">
+        <title>Jedgees</title>
+    </head>
+    <body>
+        <div class="uppergrey"></div>
+        <div class="Purchasewrapper">
+            <div class="Purchasecontainer">
+                <div class="title">
+                    <img src="Purchase assets/coins.png" alt="Human Icon">
+                    <h2>Jedgees Purchase</h2>
+                </div>
+                <form action="Signup-index.php" method="POST">
+                    <div >
+                        <label for="Step 1">Step 1: <b>Scan the QR CODE</b></label><br><br>
+                        <div >
+                        <img src="Purchase assets/Qr code.png" alt="QRcode" id="QrCode">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="Step 2">Step 2: <b>Screenshot the receipt</b></label><br> <br>
+                        <div>
+                        <label for="Example">Example:</label><br> <br>
+                        <img src="Purchase assets/Receipt.png" alt="receipt" id="receipt">
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <label for="Step 3">Step 3:<b> Type the amount</b></label><br>
+                        <input type="Amount" id="Amount" name="Amount" required>
+                    </div>
+                    <div>
+                        <label for="Step 4">Step 4: <b>Type the referral No.</b></label><br>
+                        <input type="text" id="referral" name="referral" equired>
+                    </div>
+                    <div>
+                        <label for="Step 5">Step 5: <b>Upload the Screenshot</b></label><br><br>
+                        <input type="image" id="image" name="image" src="Purchase assets/upload.png" required>
+                    </div>
+                    
+                    <button type="submit" class="Signup">SIGN UP</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="background">
+            <img src="Purchase assets/LOGO.png" id="logo" alt="Logo">
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <img id="logo-footer" src="Purchase assets/LOGO.png" alt="Logo">
+                <p class="contact">CONTACT US: </p>
+                <div class="phone">
+                    <img src="Purchase assets/phone.png" id="phone" alt="Phone Icon">
+                    <p>Telephone: 794-27-67</p>
+                </div>
+                <div class="message">
+                    <img src="Purchase assets/message.png" id="message" alt="Message Icon">
+                    <p>jedgees18digitalprinting@gmail.com</p>
+                </div>
+                <div class="coins">
+                    <img src="Purchase assets/coins.png" id="coins" alt="Coins Icon">
+                    <p>Service Pricing</p>
+                </div>
+                <div class="human">
+                    <img src="Purchase assets/human.png" id="human" alt="Human Icon">
+                    <p>About Jedgees</p>
+                </div>
+                <div class="handshake">
+                    <img src="Purchase assets/handshake.png" id="handshake" alt="Handshake Icon">
+                    <p>Service Offered</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- <script>
+            function submitForm() {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return false;
+                }
+
+                alert('Form submitted successfully!');
+                // Here, you can add code to send the form data to the server
+                return true; // returning true will allow the form to submit
+            }
+        </script> -->
+    </body>
+</html>
