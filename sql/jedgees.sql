@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2024 at 07:30 AM
+-- Generation Time: May 31, 2024 at 08:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -52,6 +52,39 @@ INSERT INTO `print_customization` (`billing_id`, `type_paper`, `color`, `size`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `taurp_customization`
+--
+
+CREATE TABLE `taurp_customization` (
+  `id` int(11) NOT NULL,
+  `feet_1` int(11) NOT NULL,
+  `feet_2` int(11) NOT NULL,
+  `copies` int(11) NOT NULL,
+  `with_layout` varchar(3) NOT NULL,
+  `instructions` varchar(255) NOT NULL,
+  `taurp_price` float NOT NULL,
+  `copies_price` float NOT NULL,
+  `layout_price` float NOT NULL,
+  `total_price` float NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `file_path` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `taurp_customization`
+--
+
+INSERT INTO `taurp_customization` (`id`, `feet_1`, `feet_2`, `copies`, `with_layout`, `instructions`, `taurp_price`, `copies_price`, `layout_price`, `total_price`, `file_name`, `file_path`) VALUES
+(1, 2, 5, 6, 'Yes', 'IDK', 180, 1080, 0, 1205, 'Doc1.docx', '../uploads/Doc1.docx'),
+(2, 5, 6, 5, 'Yes', 'Write down your special instructions', 0, 0, 0, 0, 'log.txt', '../uploads/log.txt'),
+(3, 2, 3, 5, 'Yes', 'Write down your special instructions', 108, 540, 0, 665, 'Lessons.docx', '../uploads/Lessons.docx'),
+(4, 2, 3, 5, 'Yes', 'Write down your special instructions', 108, 540, 0, 665, 'PROGRESS REPORT.pdf', '../uploads/PROGRESS REPORT.pdf'),
+(5, 5, 5, 5, 'Yes', 'Write down your special instructions', 450, 2250, 125, 2375, 'Purposive.docx', '../uploads/Purposive.docx'),
+(6, 2, 5, 5, 'No', 'Write down your special instructions', 180, 900, 0, 900, 'ARMOJALLAS- REFLECTION-PAPER (APRIL).pdf', '../uploads/ARMOJALLAS- REFLECTION-PAPER (APRIL).pdf');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_credentials`
 --
 
@@ -82,6 +115,12 @@ ALTER TABLE `print_customization`
   ADD PRIMARY KEY (`billing_id`);
 
 --
+-- Indexes for table `taurp_customization`
+--
+ALTER TABLE `taurp_customization`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user_credentials`
 --
 ALTER TABLE `user_credentials`
@@ -96,6 +135,12 @@ ALTER TABLE `user_credentials`
 --
 ALTER TABLE `print_customization`
   MODIFY `billing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `taurp_customization`
+--
+ALTER TABLE `taurp_customization`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_credentials`
