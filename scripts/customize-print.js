@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var resibo = document.getElementById('resibo');
     var instructions = document.getElementById('instructions');
     var checkpriceButton = document.getElementById('checkprice');
-    var submit = document.getElementById('submit');
+    var submit = document.getElementById('submit_print');
     var resetButton = document.getElementById('reset-print');
 
     var bondpaper = "Bond Paper";

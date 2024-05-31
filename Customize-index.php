@@ -12,6 +12,7 @@ require('./backend/database.php');
         <title>Jedgees</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/customize-print.js"></script>
+        <script src="scripts/customize-taurp.js"></script>
 
         
     </head>
@@ -74,7 +75,7 @@ require('./backend/database.php');
                                     </select>
                                     <br><br>
                                     <label for="numpages">Number of pages:</label><br><br>
-                                    <input type="number" name="numpage" id="pages" required>
+                                    <input class="textinputs" type="number" name="numpage" id="pages" required>
                                     <br><br>
                                     
                                     
@@ -82,7 +83,7 @@ require('./backend/database.php');
                                 </div>
                                 <div>
                                     <label for="docu" required>Upload your document:</label><br><br>
-                                    <input type="file" id="docu" name="file"><br><br>
+                                    <input type="file" id="docu" name="file" required><br><br>
                                     <label for="bind">Type of bind:</label><br><br>
                                     <input type="radio" class="binding" id="bind1" name="bind" value="Small Ring Bind"><label for="smallringbind">Small Ring Bind</label><br><br>
                                     <input type="radio" class="binding" id="bind2" name="bind" value="Big Ring Bind"><label for="bigringbind">Big Ring Bind</label><br><br>
@@ -92,7 +93,7 @@ require('./backend/database.php');
                                 </div>
                                 <div>
                                     <label for="instructions" id="instructions">Special instructions:</label><br><br>
-                                    <textarea name="instructions" id="instructions" rows="13" cols="50" placeholder="Write down your special instructions" value="None"></textarea>
+                                    <textarea class="textfields" name="instructions" id="instructions" rows="13" cols="50" placeholder="Write down your special instructions" value="None"></textarea>
                                 </div>
 
                                 <input type="hidden" name="bindprice" id="bindpricehidden" value="">
@@ -146,37 +147,78 @@ require('./backend/database.php');
             <section class="container">
                 <div class="Tarpaulins">
                     <h1>Tarpaulin Customization</h1>
-                <form class="forms">
-                    <div class="form-left">
+                <form class="forms" id="form-taurp" method="POST" action="backend/customize-print.php" enctype="multipart/form-data">
+                    <div class="form-left" id="taurp-form-left">
                             <div>
-                            <label for="numpages">Number of Copies:</label><br><br>
-                            <input type="number" name="numcopies" id="textinputs">
-                            <br><br>
-                            <label for="papertype">Type of Material:</label><br><br>
-                            <select name="papertype" id="dropdowns">
-                                <option value="Bond">Bond Paper</option>
-                                <option value="Copy">Copy Paper</option>
-                                <option value="Vellum">Vellum Paper</option>
-                            </select><br><br>
+
                             <label for="papersize">Size of Tarpaulin:</label><br><br>
-                            <input type="number" name="sizecopies" id="textinputs">
-                        </div>
-                        <div>
+                            <input type="number" id="size-ft1" name="size-ft1" class="textinputs taurp-size" min="2" max="9" required>
+                            <input type="number" id="size-ft2" name="size-ft2" class="textinputs taurp-size" min="" max="" required>
+                            <br><br>
+                            <label for="numpages">Number of Copies:</label><br><br>
+                            <input type="number" name="numcopies_taurp" class="textinputs" id="numcopies_taurp" required>
+                            
+                            <br><br>
                             <label for="docu">Upload your document:</label><br><br>
-                            <input type="file" id="docu" name="documentfile"><br><br>
-                            <label for="bind">With stand:</label><br><br>
-                            <input type="radio" id="bind" name="stand" value="Yes"><label for="Yes">Yes</label><br><br>
-                            <input type="radio" id="bind" name="stand" value="No"><label for="No">No</label>
+                            <input type="file" id="docu" name="file-taurp" required><br><br>
+                            <label for="bind">With our layout?:</label><br><br>
+                            <input type="radio" id="bind" name="edit" value="Yes"><label for="Yes">Yes</label><br><br>
+                            <input type="radio" id="bind" name="edit" value="No" required><label for="No">No</label>
+                            
                         </div>
+                        <!-- <div>
+                            Input here if needed
+                            
+                        </div> -->
                         <div>
                             <label for="instructions" id="instructions">Special instructions:</label><br><br>
-                            <textarea name="instructions" id="textfields" rows="13" cols="50">Write down your special instructions</textarea>
+                            <textarea class="textfields" name="instructions-taurp" id="textfields" rows="13" cols="50">Write down your special instructions</textarea>
                         </div>
+
+                        <div class="total" id="resibo-taurp" style="display: none;">
+                                    <h1>Confirm Order: </h1>
+                                    <hr>
+                                    <div class="size-taurp-price">
+                                        <p><b>Size of Taurpalin: </b><span id="size-taurp"></span></p>
+                                        <p class="total-dash" id="size-taurp-price"></p>
+                                    </div>
+                                    <hr>
+                                    <div class="total-info-container">
+                                        <div class="total-info">
+                                            
+                                            <p><b>Number of Copies: </b><span id="num-taurp"></span></p>
+                                            <p><b>With our layout?: </b><span id="layout"></span></p>
+                                            <p style="display: none;" id="layout-price-display"><b>Layout Price: </b></p>
+
+                                        </div>
+                                        <div class="total-prices">
+                                            <b><p class="total-dash" id="num-taurp-price"></p></b>
+                                            <b><p class="total-dash" id="with-layout-dash"></p></b> 
+                                            <b><p class="total-dash" id="layout-price"></p></b>
+                                            
+                                        </div>
+
+
+                                    </div>
+                                    <hr>
+                                    
+                                    <div class="subtotal-container">
+                                        <h3>Total: </h3>
+                                        <b><p id="totalprice-taurp"></p></b>
+                                    </div>
+                                    
+                                </div>
                     </div>
+
+                    <input type="hidden" name="taurp-price" id="taurp-price">
+                    <input type="hidden" name="copies-price" id="copies-price">
+                    <input type="hidden" name="layout-price" id="layout-price-value">
+                    <input type="hidden" name="total-price" id="total-price">
                     
                     <div class="sidepanel">
-                        <button type="reset" name="reset"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
-                        <button type="submit" name="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
+                        <button type="reset" name="reset" id="reset-taurp"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
+                        <button style="display: block;" type="button" id="checkprice_taurp"><img src="Customize assests/Pay.png"><br><p>Check Price</p></button>
+                        <button style="display: block;" type="submit" name="submit_taurp" id="submit-taurp"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
                     </div>
                  </form>
                 </div>
@@ -189,7 +231,7 @@ require('./backend/database.php');
                     <div class="form-left">
                             <div>
                             <label for="numpages">Number of Copies:</label><br><br>
-                            <input type="number" name="numcopies" id="textinputs">
+                            <input type="number" name="numcopies" class="textinputs">
                             <br><br>
                             <label for="papertype">Type of Material:</label><br><br>
                             <select name="papertype" id="dropdowns">
@@ -198,7 +240,7 @@ require('./backend/database.php');
                                 <option value="Vellum">Vellum Paper</option>
                             </select><br><br>
                             <label for="papersize">Size of Poster:</label><br><br>
-                            <input type="number" name="sizecopies" id="textinputs">
+                            <input type="number" name="sizecopies" class="textinputs">
                         </div>
                         <div>
                             <label for="docu">Upload your document:</label><br><br>
