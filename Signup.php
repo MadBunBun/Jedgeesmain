@@ -1,7 +1,26 @@
+<?php
+    require('./backend/database.php');
+
+    session_start();
+
+    // if ($_SESSION['session'] == 'invalid' || empty($_SESSION['session'])){
+    //     $_SESSION['session'] = 'invalid';
+    // }
+
+
+    if (!isset($_SESSION['session'])) {
+        $_SESSION['session'] = 'invalid';
+    }
+
+    if ($_SESSION['session'] == 'valid'){
+        echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php';</script>";    
+    }
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="signup.css" type="text/css">
+        <link rel="stylesheet" href="stylesheets/signup.css" type="text/css">
         <title>Jedgees</title>
     </head>
     <body>
@@ -12,46 +31,30 @@
                     <img src="Signup assets/human.png" alt="Human Icon">
                     <h2>Jedgees Sign Up</h2>
                 </div>
-                <form action="Signup.php" method="POST"onsubmit="submitForm()">
+                <form  action="backend/Signup-index.php" method="POST">
                     <div>
                         <label for="email">Email Address:</label><br>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="email" name="email" placeholder="example@gmail.com"required>
                     </div>
                     <div>
                         <label for="password">Password:</label><br>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" required>
                     </div>
                     <div>
                         <label for="confirmPassword">Confirm Password:</label><br>
-                        <input type="password" id="confirmPassword" name="confirmPassword">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
                     </div>
                     <div>
-                        <label for="name">First Name:</label><br>
-                        <input type="text" id="fname" name="fname">
-                    </div>
-                    <div>
-                        <label for="name">Last Name:</label><br>
-                        <input type="text" id="lname" name="lname">
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" placeholder="Surname, First Name" required>
                     </div>
                     <div>
                         <label for="phoneNumber">Phone Number:</label><br>
-                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="09999999999" required>
                     </div>
                     <div>
-                        <label for="address">Street Number:</label><br>
-                        <input type="text" id="address" name="address" placeholder="example: 8692">
-                    </div>
-                    <div>
-                        <label for="address">Street Name:</label><br>
-                        <input type="text" id="address" name="address" placeholder="example: Fortuna">
-                    </div>
-                    <div>
-                        <label for="address">City:</label><br>
-                        <input type="text" id="address" name="address" placeholder="example: Makati">
-                    </div>
-                    <div>
-                        <label for="address">Postal Code:</label><br>
-                        <input type="text" id="address" name="address" placeholder="example: 1207">
+                        <label for="address">Address:</label><br>
+                        <input type="text" id="address" name="address" required>
                     </div>
                     <button type="submit" class="Signup">SIGN UP</button>
                 </form>
@@ -89,21 +92,6 @@
             </div>
         </footer>
 
-        <script>
-            function submitForm() {
-                var email = document.getElementById('email').value;
-                var password = document.getElementById('password').value;
-                var confirmPassword = document.getElementById('confirmPassword').value;
-
-                if (password !== confirmPassword) {
-                    alert('Passwords do not match!');
-                    return false;
-                }
-
-                alert('Form submitted successfully!');
-                // Here, you can add code to send the form data to the server
-                return true; // returning true will allow the form to submit
-            }
-        </script>
+        
     </body>
 </html>

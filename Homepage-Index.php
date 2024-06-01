@@ -7,7 +7,7 @@ require('./backend/session.php');
 <!DOCTYPE html>
 <html>
         <head>
-            <link rel="stylesheet" href="homepage.css" type="text/css">
+            <link rel="stylesheet" href="stylesheets/homepage.css" type="text/css">
             <title>Jedgees</title>
         </head>
         <body>
@@ -100,7 +100,7 @@ require('./backend/session.php');
                     <div class="login">
                         <form>
                         <div class="login-left">
-                            <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email"></div>
+                            <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email" ></div>
                             <div><label>PASSWORD:</label><br></b><input type="password" class="password" name="User_Password"></div>
                             <button type="submit" name="login"><b>LOGIN</b></button>
                         </div>
@@ -110,8 +110,8 @@ require('./backend/session.php');
                             <div></div>
                         </div>
                         <div class="login-right">
-                            <div><p><b>SIGN UP</b></p><a href=""></a></div>
-                            <div><p><b>FORGOT PASS</b></p><a href=""></a></div>
+                        <a class="sn" href="Signup.php" style="text-decoration: none; color: white;"><div><p><b>SIGN UP</b></p></div></a>
+                        <a class="sn" href="" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
                         </div>
                         </form>
 
@@ -128,7 +128,7 @@ require('./backend/session.php');
                 <div class="login">
                     <form>
                     <div class="login-left">
-                        <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email"></div>
+                        <div><label>EMAIL:</label><br><input type="email" class="email" name="User_Email" ></div>
                         <div><label>PASSWORD:</label><br></b><input type="password" class="password" name="User_Password"></div>
                         <button type="submit" name="login"><b>LOGIN</b></button>
                     </div>
@@ -138,8 +138,8 @@ require('./backend/session.php');
                         <div></div>
                     </div>
                     <div class="login-right">
-                        <div><p><b>SIGN UP</b></p><a href=""></a></div>
-                        <div><p><b>FORGOT PASS</b></p><a href=""></a></div>
+                    <a class="sn" href="Signup.php" style="text-decoration: none; v"><div><p><b>SIGN UP</b></p></div></a>
+                        <a class="sn" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
                     </div>
                     </form>
                     <button type="button">X</button>
