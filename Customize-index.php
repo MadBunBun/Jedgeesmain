@@ -23,20 +23,20 @@ require('./backend/database.php');
                         <img src="Customize assests/LOGO.png" id="logo"><!--logo-->
                         <div class="Nav"><!--Navigation-->
                                 <button id="home-redirect"><b>Home</b></s></button>
-                                <button><b>Products</b></button>
+                                <button id="products-redirect"><b>Products</b></button>
                                 <button id="customs-redirect"><b>Customs</b></b>
                         </div>
                     </div>
                     
                     <div class="user-cart"> <!--user and cart*-->
                         <div>
-                            <a href="">
+                            <a href="Userpage Index.html">
                                 <img src="Customize assests/Userpf.png">
                                 <p>User</p>
                             </a>
                         </div>
                         <div>
-                            <a href="">
+                            <a href="Customize-index.php">
                                 <img src="Customize assests/Cart.png">
                                 <p>Cart</p>
                             </a>
@@ -308,6 +308,9 @@ require('./backend/database.php');
 
                 document.getElementById("home-redirect").addEventListener("click", function() {
                     window.location.href = "./Homepage-index.php";
+                });
+                document.getElementById("products-redirect").addEventListener("click", function() {
+                    window.location.href = "./Products-index.html";
                 });
          </script>
 

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categories = [...new Set(product.map(item => item))];
     let i = 0;
 
-    document.getElementsByClassName('product_container')[0].innerHTML = categories.map(item => {
+    document.getElementsByClassName('product_container')[0].innerHTML = categories.map((item, index) => {
         var { image, name, price } = item;
         return `
             <div class="prod">
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="item-desc">
                     <p>${name}<br>&#8369;${price}</p>
                     <div></div>
-                    <button type="button" onclick="addtocart(${i})">
+                    <button type="button" onclick="addtocart(${index})">
                         <img src="Homepage assets/arrowbtn.png" id="product-arrow">
                     </button>
                 </div>

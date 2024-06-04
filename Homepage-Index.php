@@ -54,6 +54,7 @@
                                 <button class="ol nav-button" id="home-redirect"><b>Home</b></button>
                                 <button class="ol nav-button" id="products-redirect"><b>Products</b></button>
                                 <button class="ol nav-button" id="customs-redirect"><b>Customs</b></button>
+                                
                         </div>
                         
                     </div>
@@ -280,6 +281,9 @@
                 });
                 document.getElementById("home-redirect").addEventListener("click", function() {
                     window.location.href = "./Homepage-Index.php";
+                });
+                document.getElementById("products-redirect").addEventListener("click", function() {
+                    window.location.href = "./Products-Index.html";
                 });
                 </script>
 
