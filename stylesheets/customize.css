@@ -1,3 +1,4 @@
+
 *{
     font-family: 'Inter', sans-serif;
 }
@@ -67,6 +68,23 @@ body{
     color: black;
 }
 .user-cart img{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3px
+}
+
+.Logout button{
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.Logout img {
     width: 20px;
     height: 20px;
     margin: 0px 10px 0px 10px;
