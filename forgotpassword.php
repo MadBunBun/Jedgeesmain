@@ -1,18 +1,5 @@
 <?php
-// Database connection settings
-$servername = "localhost";
-$username = "mysql -u root -p";
-$password = "";
-$dbname = "digi_dreamers";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+require('./backend/database.php');
 function generateRandomCode($length = 8) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
