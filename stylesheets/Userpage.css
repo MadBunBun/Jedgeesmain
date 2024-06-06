@@ -31,6 +31,10 @@ body{
     justify-content: space-evenly;
     max-width: 70%;
 }
+.Nav div a{
+   text-decoration: none;
+   color: white; 
+}
 .Nav div{
     margin: 5%;
     background-image: linear-gradient(to right, #d9d9d9, #737373);
@@ -163,7 +167,7 @@ footer {
 }
 .userinfo-container{
     width: 1200px;
-    height: 425px;
+    height: 525px;
     background-color: #d9d9d9E6;
     border-radius: 7px;
     padding: 2%;
@@ -226,4 +230,9 @@ footer {
     width: 1000px;
     height: 1000px;
     opacity: 0.7;
+}
+.alluserinfo input{
+    background: none;
+    border: none;
+    font-size: 16px;
 }

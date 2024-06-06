@@ -1,6 +1,7 @@
 <?php
+require('backend/database.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form data
+    
     $fname = $_POST['fname'];
     $mname = $_POST['mname'];
     $lname = $_POST['lname'];
@@ -11,25 +12,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contact = $_POST['contact'];
     $email = $_POST['email'];
 
-    // Update customer data in the database
+    
     $sql = "UPDATE customers 
             SET fname=?, mname=?, lname=?, city=?, baranggay=?, sthouse=?, zip=?, contact=?, email=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssssiis", $fname, $mname, $lname, $city, $baranggay, $sthouse, $zip, $contact, $email);
 
     if ($stmt->execute()) {
-        echo "Customer data updated successfully.";
+        echo "<script>console.log('Customer data updated successfully.')</script>";
     } else {
-        echo "Error updating customer data: " . $conn->error;
+        echo "<script>console.log('Error updating customer data:')</script>" . $conn->error;
     }
 }
 
 
-$sql = "SELECT * FROM customers LIMIT 1"; // Assuming only one customer's data is stored in the database
+$sql = "SELECT * FROM customers LIMIT 1"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Fetch customer data and assign it to variables
+    
     $row = $result->fetch_assoc();
     $fname = $row['fname'];
     $mname = $row['mname'];
