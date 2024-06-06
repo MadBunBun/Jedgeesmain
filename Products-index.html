@@ -10,10 +10,10 @@
                     <div class="logo-nav">
                         <img src="Product assets/LOGO.png" id="logo"><!--logo-->
                         <div class="Nav"><!--Navigation-->
-                                <div><a href="Homepage-Index.php"><b>Home</b></a></div>
-                                <div><a href="Products-index.html"><b>Products</b></a></div>
-                                <div><a href="Customize-index.php"><b>Customs</b></a></div>
-                        </div>
+                            <button id="home-redirect"><b>Home</b></s></button>
+                            <button id="products-redirect"><b>Products</b></button>
+                            <button id="customs-redirect"><b>Customs</b></b>
+                    </div>
                     </div>
                     
                     <div class="user-cart"> <!--user and cart*-->
@@ -24,7 +24,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="Cart-index.html">
+                            <a href="Cart-index.php">
                                 <img src="Product assets/Cart.png">
                                 <p>Cart</p>
                             </a>
@@ -72,6 +72,19 @@
                      <p>Service Offered</p>
                  </div>
          </div>
+
+         <script>
+            document.getElementById("customs-redirect").addEventListener("click", function() {
+                    window.location.href = "./Customize-index.php";
+                });
+
+                document.getElementById("home-redirect").addEventListener("click", function() {
+                    window.location.href = "./Homepage-index.php";
+                });
+                document.getElementById("products-redirect").addEventListener("click", function() {
+                    window.location.href = "./Products-index.html";
+                });
+         </script>
     </footer>
    
 </html>

@@ -36,7 +36,7 @@ require('./backend/database.php');
                             </a>
                         </div>
                         <div>
-                            <a href="Customize-index.php">
+                            <a href="Cart-index.php">
                                 <img src="Customize assests/Cart.png">
                                 <p>Cart</p>
                             </a>

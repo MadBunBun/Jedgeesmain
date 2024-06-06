@@ -61,13 +61,13 @@
                     
                     <div class="user-cart"> <!--user and cart*-->
                         <div>
-                            <a href="">
+                            <a href="Userpage index.html">
                                 <img src="Homepage assets/Userpf.png">
                                 <p>User</p>
                             </a>
                         </div>
                         <div>
-                            <a href="">
+                            <a href="Cart-index.php">
                                 <img src="Homepage assets/Cart.png">
                                 <p>Cart</p>
                             </a>
