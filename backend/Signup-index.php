@@ -29,7 +29,7 @@ if (mysqli_query($conn, $query)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-
+$stmt->close();
 $conn->close();
 
 ?>
