@@ -1,44 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const product = [
-        { id: 0, image: '2x4poster.jpg', name: '2 by 4 Poster', price: 80 },
-        { id: 1, image: 'bookbind.jpg', name: 'Bookbinded Print', price: 120 },
-        { id: 2, image: 'researchmanuscripts.jpg', name: 'Research Manuscripts', price: 100 },
-        { id: 3, image: 'Welcomingtarp.jpg', name: 'Welcoming Tarpaulin', price: 90 },
-        { id: 4, image: 'rushedposters.jpg', name: 'Rushed Posters', price: 150 },
-        { id: 5, image: 'tarpwithstand.jpg', name: 'Standing Tarpaulin', price: 220 },
-        { id: 6, image: 'ringbind.jpg', name: 'Ring Binded Print', price: 80 },
-        { id: 7, image: 'campaigntarps.jpg', name: 'Campaign Tarpaulin', price: 100 },
-        { id: 8, image: 'ecofriendly.jpg', name: 'Environmental Posters', price: 50 },
-        { id: 9, image: 'coloreddataprint.jpg', name: 'Data Prints', price: 60 },
-        { id: 10, image: 'printadtarp.jpg', name: 'Casual Tarpaulins', price: 100 }
-    ];
+    const renderProducts = (product, containerClass) => {
+        const container = document.getElementsByClassName(containerClass)[0];
+        if (!container) {
+            console.error(`Container with class ${containerClass} not found`);
+            return;
+        }
 
-    const categories = [...new Set(product.map(item => item))];
-    let i = 0;
-
-    document.getElementsByClassName('product_container')[0].innerHTML = categories.map((item, index) => {
-        var { image, name, price } = item;
-        return `
-            <div class="prod">
-                <img src="backend/product images/${image}" id="prod-img">
-                <div class="item-desc">
-                    <p>${name}<br>&#8369;${price}</p>
-                    <div></div>
-                    <button type="button" onclick="addtocart(${index})">
-                        <img src="Homepage assets/arrowbtn.png" id="product-arrow">
-                    </button>
+        container.innerHTML = product.map((item, index) => {
+            const { image, name, price } = item;
+            return `
+                <div class="prod">
+                    <img src="../backend/product images/${image}" id="prod-img">
+                    <div class="item-desc">
+                        <p>${name}<br>&#8369;${price}</p>
+                        <div></div>
+                        <button type="button" onclick="addtocart(${index})">
+                            <img src="Homepage assets/arrowbtn.png" id="product-arrow">
+                        </button>
+                    </div>
                 </div>
-            </div>
-        `;
-    }).join('');
+            `;
+        }).join('');
+    };
 
-    
+    const renderEdits = (product, containerClass) => {
+        const container = document.getElementsByClassName(containerClass)[0];
+        if (!container) {
+            console.error(`Container with class ${containerClass} not found`);
+            return;
+        }
+
+        container.innerHTML = product.map((item, index) => {
+            const { image, name, price } = item;
+            return `
+                <div class="prod">
+                    <div class="editoption"><button class="edit-button" data-index="${index}">edit product</button></div>
+                    <img src="../backend/product images/${image}" id="prod-img">
+                    <div class="item-desc">
+                        <p>${name}<br>&#8369;${price}</p>
+                        <div></div>
+                        <button type="button" onclick="addtocart(${index})">
+                            <img src="Homepage assets/arrowbtn.png" id="product-arrow">
+                        </button>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        document.querySelectorAll('.edit-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                console.log('Editing product:', product[index]);
+            });
+        });
+    };
+
+    fetch('../backend/fetch_products.php')
+        .then(response => response.json())
+        .then(product => {
+            renderProducts(product, 'product_container');
+            renderEdits(product, 'product_container_admin');
+        })
+        .catch(error => console.error('Error fetching products:', error));
+
     var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-   
-    window.addtocart = function(a) {
-        console.log('Adding to cart:', categories[a]);
-        cart.push({ ...categories[a] });
+    window.addtocart = function(index) {
+        console.log('Adding to cart:', product[index]);
+        cart.push({ ...product[index] });
         localStorage.setItem('cart', JSON.stringify(cart)); 
     };
 });
