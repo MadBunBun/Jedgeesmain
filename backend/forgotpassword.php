@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
 
     // Check if the email exists
-    $sql = "SELECT * FROM users WHERE email = ?";
+    $sql = "SELECT * FROM users WHERE email = $email";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -30,11 +30,71 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $message = "Email doesn't exist";
     }
-
+    if (isset($_GET['message'])) {
+        echo '<div id="message">' . htmlspecialchars($_GET['message']) . '</div>';
+    }
     $stmt->close();
     $conn->close();
 
-    // Redirect back to the form with a message
-    header("Location: /forgotpassword.html");
-}
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="forgotpassword.css" type="text/css">
+    <title>Forgot Password</title>
+</head>
+<body>
+    <div class="uppergrey"></div>
+    <div class="signupwrapper">
+        <div class="signupcontainer">
+            <div class="title">
+                <img src="Signup assets/human.png" alt="Human Icon">
+                <h2>Forgot Password</h2>
+            </div>
+            <div class="forgotpassword">
+                <form action="forgotpassword.php" method="POST">
+                    <label for="email">Enter your account email:</label><br><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <button type="submit">Next</button>
+                </form>
+            </div>
+            <?php
+            if ($message != '') {
+                echo '<div id="message">' . htmlspecialchars($message) . '</div>';
+            }
+            ?>
+        </div>
+    </div>
+
+    <div class="background">
+        <img src="Signup assets/LOGO.png" id="logo" alt="Logo">
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <img id="logo-footer" src="Homepage assets/LOGO.png" alt="Logo">
+            <p class="contact">CONTACT US: </p>
+            <div class="phone">
+                <img src="Homepage assets/phone.png" id="phone" alt="Phone Icon">
+                <p>Telephone: 794-27-67</p>
+            </div>
+            <div class="message">
+                <img src="Homepage assets/message.png" id="message" alt="Message Icon">
+                <p>jedgees18digitalprinting@gmail.com</p>
+            </div>
+            <div class="coins">
+                <img src="Homepage assets/coins.png" id="coins" alt="Coins Icon">
+                <p>Service Pricing</p>
+            </div>
+            <div class="human">
+                <img src="Homepage assets/human.png" id="human" alt="Human Icon">
+                <p>About Jedgees</p>
+            </div>
+            <div class="handshake">
+                <img src="Homepage assets/handshake.png" id="handshake" alt="Handshake Icon">
+                <p>Service Offered</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
