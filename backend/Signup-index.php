@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 
-$query = "INSERT INTO user_credentials (id, username, password, name, phonenumber, address) VALUES (null, '$email', md5('$password'), '$name', '$phoneNumber', '$address')";
+$query = "INSERT INTO user_credentials (id, username, password, fname, mname, lname, contactnum, streetNumber, streetName, barangay, city, postal) VALUES (null, '$email', md5('$password'), '$fname', '$mname', '$lname', '$streetNumber', '$streetName', '$barangay', '$city', '$postal')";
 if (mysqli_query($conn, $query)) {
     $_SESSION['session'] = 'valid';
     echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php'</script>";
