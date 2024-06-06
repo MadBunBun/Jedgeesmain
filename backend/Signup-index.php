@@ -3,9 +3,15 @@ require('./session.php');
 require('./database.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
-$name = $_POST['name'];
-$phoneNumber = $_POST['phoneNumber'];
-$address = $_POST['address'];
+$fname = $_POST['fname'];
+$mname = $_POST['mname'];
+$lname = $_POST['lname'];
+$contactnum = $_POST['contactnum'];
+$streetNumber = $_POST['streetNumber'];
+$streetName = $_POST['streetName'];
+$barangay = $_POST['barangay'];
+$city = $_POST['city'];
+$postal = $_POST['postal'];
 
 
 if ($conn->connect_error) {
