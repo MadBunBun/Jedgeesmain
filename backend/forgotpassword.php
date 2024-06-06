@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn->close();
 
     // Redirect back to the form with a message
-    header("Location: forgotpassword.html?message=" . urlencode($message));
-    exit;
+    header("Location: /forgotpassword.html");
 }
 ?>
