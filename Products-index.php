@@ -34,6 +34,12 @@ require('./backend/database.php');
                                 <p>Cart</p>
                             </a>
                         </div>
+                        <form action="backend/logout.php" method="POST" class="Logout">
+                            <button type="submit" name="logout">
+                                <img src="Homepage assets/Logout.png" alt="">
+                                <p>Logout</p>
+                            </button>
+                       </form>
                     </div>
             </section>
             <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
