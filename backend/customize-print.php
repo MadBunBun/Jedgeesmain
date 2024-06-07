@@ -88,6 +88,54 @@ require('./database.php');
 
     }
 
+
+   if (isset($_POST['submit_shirt'])) {
+        $num_shirt = intval($_POST['numShirt']);
+        $printshirt_size = $_POST['print-size_shirt'];
+        $shirt_size = $_POST['shirt_size'];
+        $shirt_material = $_POST['shirt_material'];
+        $vinyl_type = $_POST['typevinyl'];
+        $instructions = $_POST['instructions-tshirt'];
+
+
+        $shirt_price = floatval($_POST['shirt_price']);
+        $vinyl_price = floatval($_POST['vinyl_price']);
+        $print_sizeprice = floatval($_POST['print_sizeprice']);
+
+        $total_price = floatval($_POST['total_price']);
+
+        $targetDir = "../uploads/";
+
+        
+        if (isset($_FILES['file-shirt']) && $_FILES['file-shirt']['error'] == 0) {
+            $fileName = basename($_FILES["file-shirt"]["name"]);
+            $targetPath = $targetDir.$fileName;
+
+            if (move_uploaded_file($_FILES["file-taurp"]["tmp_name"], $targetPath)) {
+                $query = "INSERT INTO shirt_customization (num_shirt, printshirt_size, shirt_size, shirt_material, instructions, shirt_price, vinyl_price, print_sizeprice, total_price, file_name, file_path)
+                VALUES ($num_shirt, '$printshirt_size', '$shirt_size', '$shirt_material', '$instructions', $shirt_price, $vinyl_price, $print_sizeprice, $total_price, '$fileName', '$targetPath')";
+
+                if (mysqli_query($conn, $query)) {
+                    header("Location: ../Customize-index.php");
+                    echo "<script>console.log('File Successfully Saved to DB');</script>";
+                }
+
+                else {
+                    echo "<script>console.log('Error: .$query');</script>";
+                }
+            }
+            else {
+                echo "<script>console.log('Moving Files Error!');</script>";
+            }
+           
+        }
+
+        else {
+            echo "<script>console.log('Files not uploaded successfully');</script>";
+        }
+
+    } 
+
     
 
 ?>

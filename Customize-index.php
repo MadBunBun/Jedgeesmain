@@ -13,6 +13,7 @@ require('./backend/database.php');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/customize-print.js"></script>
         <script src="scripts/customize-taurp.js"></script>
+        <script src="scripts/customize-shirt.js"></script>
 
         
     </head>
@@ -96,7 +97,9 @@ require('./backend/database.php');
                                     <textarea class="textfields" name="instructions" id="instructions" rows="13" cols="50" placeholder="Write down your special instructions" value="None"></textarea>
                                 </div>
 
-                                <input type="hidden" name="bindprice" id="bindpricehidden" value="">
+                              
+                            </div>
+                              <input type="hidden" name="bindprice" id="bindpricehidden" value="">
                                 <input type="hidden" name="totalpages" id="totalpages" value="">
                                 <input type="hidden" name="total" id="total" value="">
 
@@ -130,15 +133,10 @@ require('./backend/database.php');
                                     </div>
                                     
                                 </div>
-                            </div>
-                            
                             <div class="sidepanel">
                                 <button type="reset" name="reset" id="reset-print"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
                                 <button style="display: block;" type="button" id="checkprice"><img src="Customize assests/Pay.png"><br><p>Check Price</p></button>
                                 <button style="display: block;" type="submit" name="submit_print" id="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
-
-                                
-                               
                             </div>
                          </form>
                         </div>
@@ -226,43 +224,97 @@ require('./backend/database.php');
 
             <section class="container">
                 <div class="Posters">
-                    <h1>Poster Customization</h1>
-                <form class="forms">
+                    <h1>Shirt Customization</h1>
+                <form class="forms" id="form-shirt" method="POST" action="backend/customize-print.php" enctype="multipart/form-data">
                     <div class="form-left">
                             <div>
-                            <label for="numpages">Number of Copies:</label><br><br>
-                            <input type="number" name="numcopies" class="textinputs">
+                            <label for="numShirts">Number of Shirts:</label><br><br>
+                            <input type="number" name="numShirt" class="textinputs" id="numShirt">
                             <br><br>
-                            <label for="papertype">Type of Material:</label><br><br>
-                            <select name="papertype" id="dropdowns">
-                                <option value="Bond">Bond Paper</option>
-                                <option value="Copy">Copy Paper</option>
-                                <option value="Vellum">Vellum Paper</option>
+                            <label for="papertype">Size of Print:</label><br><br>
+                            <select name="print-size_shirt" id="dropdowns" class="print-size_shirt">
+                                <option value="8x11">8x11</option>
+                                <option value="4x7">4x7</option>
+                                <option value="2x5">2x5</option>
                             </select><br><br>
-                            <label for="papersize">Size of Poster:</label><br><br>
-                            <input type="number" name="sizecopies" class="textinputs">
+                            <label for="papertype">Size of Shirt:</label><br><br>
+                            <select name="shirt_size" id="dropdowns" class="shirt_size">
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select><br><br>
+                            <label for="shirtmaterial">Type of Material:</label><br><br>
+                            <select name="shirt_material" id="dropdowns" class="shirt_material">
+                                <option value="softcotton">Soft Poli-Cotton Shirt</option>
+                                <option value="premcotton">Premium Cotton Shirt</option>
+                            </select><br><br>
                         </div>
                         <div>
-                            <label for="docu">Upload your document:</label><br><br>
-                            <input type="file" id="docu" name="documentfile"><br><br>
-                            <label for="colors">Type of print:</label><br>
-                            <select name="typecolor" id="dropdowns">
-                                <option value="Colored">Colored</option>
-                                <option value="B&W">B&W</option>
+                            <label for="docu">Upload your Design:</label><br><br>
+                            <input type="file" id="docu" name="file-shirt"><br><br>
+                            <label for="print type">Type of print:</label><br>
+                            <select name="typevinyl" id="dropdowns" class="typevinyl">
+                                <option value="holo">Holographic</option>
+                                <option value="metal">Metallic</option>
+                                <option value="glitter">Glitterized</option>
+                                <option value="glow">Glow in the dark</option>
+                                <option value="gamuza">Gamuza</option>
                             </select><br><br>
                         </div>
                         <div>
                             <label for="instructions" id="instructions">Special instructions:</label><br><br>
-                            <textarea name="instructions" id="textfields" rows="13" cols="50">Write down your special instructions</textarea>
+                            <textarea name="instructions-tshirt" id="textfields" rows="13" cols="50">Write down your special instructions</textarea>
                         </div>
                     </div>
-                    
-                    <div class="sidepanel">
-                        <button type="reset" name="reset"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
-                        <button type="submit" name="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
+                    <div class="total" id="resibo-shirt" style="display: none;">
+                                    <h1>Confirm Order: </h1>
+                                    <hr>
+                                    <div class="size-shirt-price">
+                                        <p><b>Shirt Size: </b><span id="size-shirt"></span></p>
+                                        <p><b>Print Size: </b><span id="size-shirt-print"></span></p>
+                                        
+                                        <p class="total-dash" id="size-shirt-price"></p>
+                                    </div>
+                                    <hr>
+                                    <div class="total-info-container">
+                                        <div class="total-info">
+                                            
+                                            <p><b>Type of material: </b><span id="material-shirt"></span></p>
+                                            <p style="display: none;" id="material-price-display"><b>Material Price: </b></p>
+                                            <p><b>Print type: </b><span id="Printvinyl"></span></p>
+                                            <p style="display: none;" id="vinyl-price-display"><b>Print type Price: </b></p>
+                                            <p><b>Number of Shirts: </b><span id="num-shirt"></span></p>
+                                        </div>
+                                        <div class="total-prices">
+                                            <b><p class="total-dash" id="layout-price"></p></b>
+                                            
+                                        </div>
+
+
+                                    </div>
+                                    <hr>
+                                    
+                                    <div class="subtotal-container">
+                                        <h3>Total: </h3>
+                                        <b><p id="totalprice-shirt"></p></b>
+                                    </div>
+                                    
+                        </div>
+                         <input type="hidden" name="shirt_price" id="shirt_price">
+                            <input type="hidden" name="vinyl_price" id="vinyl_price">
+                            <input type="hidden" name="print_sizeprice" id="print_sizeprice">
+                            <input type="hidden" name="total_price" id="total_price">
+                            <div class="sidepanel">
+                                <button type="reset" name="reset" id="reset-shirt"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
+                                <button style="display: block;" type="button" id="checkprice_shirt"><img src="Customize assests/Pay.png"><br><p>Check Price</p></button>
+                                <button style="display: block;" type="submit" name="submit_shirt" id="submit-shirt"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
+                            </div>
                     </div>
+                   
                 </form>
-                </div>
+            </div>
             </section>
 
             
