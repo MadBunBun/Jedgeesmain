@@ -7,6 +7,7 @@ require('./backend/database.php');
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/Products.css" type="text/css">
+        <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
         <title>Jedgees</title>
     </head>
     <body>

@@ -11,6 +11,7 @@ if ($_SESSION['session'] === 'student' || $_SESSION['session'] === 'admin') {
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/signup.css" type="text/css">
+        <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
         <title>Jedgees</title>
     </head>
     <body>

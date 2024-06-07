@@ -8,6 +8,7 @@ require('./backend/session.php');
 <html>
         <head>
             <link rel="stylesheet" href="stylesheets/homepage.css" type="text/css">
+            <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
             <title>Jedgees</title>
         </head>
         <body>

@@ -27,6 +27,7 @@ $billing_id = $_SESSION['billing_id'];
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/Purchase.css" type="text/css">
+        <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
         <title>Jedgees</title>
     </head>
     <body>

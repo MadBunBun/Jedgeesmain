@@ -12,6 +12,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/forgotpassword.css" type="text/css">
+        <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
         <title>Forgot Password</title>
     </head>
     <body>

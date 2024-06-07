@@ -11,6 +11,7 @@ require('./backend/database.php');
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/customize.css" type="text/css">
+        <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
         <title>Jedgees</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/customize-print.js"></script>

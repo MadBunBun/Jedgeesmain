@@ -43,6 +43,7 @@
             ?>
             
             <title>Jedgees</title>
+            
         </head>
         <body>
             
@@ -216,7 +217,7 @@
                <div class="overlay" id="popuplogin"></div>
                <div class="overlay2" id="popuplogin"></div>
                 ';
-            } else {
+            } else if ($_SESSION['session'] === 'student'){
                 echo '
                 <style>
 
@@ -299,6 +300,8 @@
 
 
                 ';
+            } else {
+                //admin side here
             }
 
             if (isset($_POST['login'])) {

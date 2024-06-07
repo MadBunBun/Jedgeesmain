@@ -10,6 +10,7 @@ if (empty($_SESSION['token'])) {
 <html>
 <head>
     <link rel="stylesheet" href="stylesheets/changepassword.css" type="text/css">
+    <link rel="icon" href="Homepage assets/LOGO.png" type="image/png">
     <title>Change Password</title>
 </head>
 <body>
