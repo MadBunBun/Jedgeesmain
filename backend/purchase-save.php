@@ -30,6 +30,8 @@ function pdf_print_custom($billing_id) {
         $bind_price = $row['bind_price'];
         $total = $row['total'];     
         $down_payment = $row['down_payment'];
+        $instructions = $row['instructions'];
+
     }
 
     $pdf = new FPDF();
@@ -57,7 +59,9 @@ function pdf_print_custom($billing_id) {
     $pdf->Cell(50,10,'Pages Price: '.number_format($pages_price, 2));
     $pdf->Ln();
     $pdf->Cell(50,10,'Bind Price: '.number_format($bind_price, 2));
-    $pdf->Ln(); // Additional line break
+    $pdf->Ln(); 
+    $pdf->Cell(50,10,'Instructions: '.$instructions);
+    $pdf->Ln(); 
     $pdf->Cell(50,10,'Total: '.number_format($total, 2));
     $pdf->Ln();
     $pdf->Ln();
@@ -89,7 +93,8 @@ function pdf_taurp_custom($billing_id) {
         $copies_price = number_format($row['copies_price'], 2);
         $layout_price = number_format($row['layout_price'], 2);
         $total_price = number_format($row['total_price'], 2);
-        $down_payment = number_format($row['down_payment'],);
+        $down_payment = number_format($row['down_payment'], 2);
+        $instructions = $row['instructions'];
 
         $display_value = $with_layout === 'No' ? 'none' : 'block';
     }
@@ -117,6 +122,8 @@ function pdf_taurp_custom($billing_id) {
     $pdf->Cell(50, 10, 'Taurpalin Price: ' . $taurp_price);
     $pdf->Ln();
     $pdf->Cell(50, 10, 'Copies Price: ' . $copies_price);
+    $pdf->Ln();
+    $pdf->Cell(50, 10, 'Instructions: ' . $instructions);
     $pdf->Ln();
     $pdf->Cell(50, 10, 'Total: ' . $total_price);
     $pdf->Ln(); 
