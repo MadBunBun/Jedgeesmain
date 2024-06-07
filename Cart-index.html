@@ -93,10 +93,33 @@ require('./backend/session.php');
                     <h3>Total: </h3>
                     <p id="totalprice"></p>
                 </div>
-            </div> 
+            </div> <!--end-->
 
-        </div>
+                </div>
                 
+                <!--
+                <table class="Subtotal">
+                    <thead>
+                        <tr>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                -->
+            <!--<div class="table">
+                <div>
+                    <p>Product Name</p>
+                    <p>Product Price</p>
+                    <p>Upload your ducoment</p>
+                    <p>Subtotal:</p>
+                </div>
+            </div> -->
             <div class="checkout">
                 <div class="checkoutcontainer">
                 <p id="Sub">Subtotal: </p>
@@ -141,11 +164,52 @@ require('./backend/session.php');
                      </div>
                     <div class="human">
                         <img src="Cart assets/human.png" id="human">
-                        <p>About Jedgees</p>
+                        <p id="openPopupText" style="cursor: pointer; ">
+                            About Jedgees 
+                        </p>
+
+                        <div id="popup" class="popup">
+                            <div class="popup-content">
+                                <span id="closePopupBtn" class="close-btn">&times;</span>
+                                <h2>About Jedgees Printing Services</h2>
+                                <p>Jedgees Printing Services was founded in 2015 as a small local print shop specializing in high-quality custom printing solutions. Over the years, the company has expanded its offerings to include tarpaulins, posters, paper prints, t-shirts, and a variety of customized products. With a focus on customer satisfaction and state-of-the-art printing technology, Jedgees has grown to become a trusted name in the printing industry, known for its innovative designs, quick turnaround times, and competitive pricing. Their commitment to excellence and adaptability has allowed them to serve a wide range of clients, from individuals to catering occasions by offering their services, enhancing their marketing and promotional efforts.</p>
+                            </div>
+                        </div>
+                        <script>
+                            // Get the popup
+                            var popup = document.getElementById("popup");
+
+                            // Get the text that opens the popup
+                            var text = document.getElementById("openPopupText");
+
+                            // Get the <span> element that closes the popup
+                            var span = document.getElementById("closePopupBtn");
+
+                            // When the user clicks the text, open the popup 
+                            text.onclick = function() {
+                                popup.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the popup
+                            span.onclick = function() {
+                                popup.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the popup, close it
+                            window.onclick = function(event) {
+                                if (event.target == popup) {
+                                    popup.style.display = "none";
+                                }
+                            }
+                        </script>
                     </div>
                      <div class="handshake">
                          <img src="Cart assets/handshake.png" id="handshake">
-                         <p>Service Offered</p>
+                         
+                         <a href="" download >
+                            Service Offered
+                          </a>
+                        
                      </div>
              </div>
 
