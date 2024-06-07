@@ -1,6 +1,5 @@
 <?php
 require('./backend/session.php');
-$_SESSION['type_print'] = 'invalid';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +23,7 @@ $_SESSION['type_print'] = 'invalid';
                     <div class="user-cart"> <!--user and cart*-->
                         
                         <div>
-                            <a href="Userpage Index.html">
+                            <a href="Userpage Index.php">
                                 <img src="Cart assets/Userpf.png">
                                 <p>User</p>
                             </a>
@@ -32,12 +31,18 @@ $_SESSION['type_print'] = 'invalid';
                         
                         
                         <div>
-                            <a href="Cart-index.html">
+                            <a href="Cart-index.php">
                                 <img src="Cart assets/Cart.png">
                                 <p>Cart</p>
                             </a>
                         </div>
-    
+
+                        <form action="backend/logout.php" method="POST" class="Logout">
+                            <button type="submit" name="logout">
+                                <img src="Homepage assets/Logout.png" alt="">
+                                <p>Logout</p>
+                            </button>
+                       </form>
                     </div>
             </section>
             <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>

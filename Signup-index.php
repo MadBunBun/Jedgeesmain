@@ -1,22 +1,3 @@
-<?php
-    require('./backend/database.php');
-    
-    session_start();
-
-    // if ($_SESSION['session'] == 'invalid' || empty($_SESSION['session'])){
-    //     $_SESSION['session'] = 'invalid';
-    // }
-
-
-    if (!isset($_SESSION['session'])) {
-        $_SESSION['session'] = 'invalid';
-    }
-
-    if ($_SESSION['session'] == 'valid'){
-        echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php';</script>";    
-    }
-
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,32 +12,52 @@
                     <img src="Signup assets/human.png" alt="Human Icon">
                     <h2>Jedgees Sign Up</h2>
                 </div>
-                <form  action="backend/Signup-index.php" method="POST">
-                    <div>
+                <form  action="backend/Signup.php" method="POST">
+                <div>
                         <label for="email">Email Address:</label><br>
-                        <input type="text" id="email" name="email" placeholder="example@gmail.com"required>
+                        <input type="text" id="email" name="email">
                     </div>
                     <div>
                         <label for="password">Password:</label><br>
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password">
                     </div>
                     <div>
                         <label for="confirmPassword">Confirm Password:</label><br>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
                     </div>
                     <div>
-                        <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name" placeholder="Surname, First Name" required>
+                        <label for="name">First Name:</label><br>
+                        <input type="text" id="fname" name="fname">
+                    </div>
+                    <div>
+                        <label for="name">Last Name:</label><br>
+                        <input type="text" id="lname" name="lname">
                     </div>
                     <div>
                         <label for="phoneNumber">Phone Number:</label><br>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="09999999999" required>
+                        <input type="tel" id="contactnum" name="contactnum">
                     </div>
                     <div>
-                        <label for="address">Address:</label><br>
-                        <input type="text" id="address" name="address" required>
+                        <label for="address">Street Number:</label><br>
+                        <input type="text" id="address" name="streetNum" placeholder="example: 8692">
                     </div>
-                    <button type="submit" class="Signup">SIGN UP</button>
+                    <div>
+                        <label for="address">Street Name:</label><br>
+                        <input type="text" id="address" name="streetName" placeholder="example: Fortuna">
+                    </div>
+                    <div>
+                        <label for="address">Barangay:</label><br>
+                        <input type="text" id="address" name="barangay" placeholder="example: Olympia">
+                    </div>
+                    <div>
+                        <label for="address">City:</label><br>
+                        <input type="text" id="address" name="city" placeholder="example: Makati">
+                    </div>
+                    <div>
+                        <label for="address">Postal Code:</label><br>
+                        <input type="text" id="address" name="postal" placeholder="example: 1207">
+                    </div>
+                    <button type="submit" class="Signup" name="sign-up">SIGN UP</button>
                 </form>
             </div>
         </div>
