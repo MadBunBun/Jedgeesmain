@@ -8,4 +8,6 @@ if ($_SESSION['session'] == 'invalid' || empty($_SESSION['session'])){
 
     echo "<script>window.location.href = '/jedgeesmain/Homepage-Index.php'</script>";
 }
+
+unset($_SESSION['billing_id']);
 ?>

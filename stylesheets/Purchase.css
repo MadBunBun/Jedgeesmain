@@ -61,14 +61,13 @@ footer {
     height: 850px;
     margin: 5% 0 5% 0;
     border-radius: 7px;
-    
 
 }
 .Purchasewrapper{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .title {
     display: flex;
@@ -115,3 +114,66 @@ footer {
     height: 25px;
     margin: 0 0 0 10%;
 }
+.Receiptcontainer{
+    background-color: #d9d9d9E6;
+    width: 550px;
+    height: 350px;
+    margin: 5% 0 5% 0;
+    border-radius: 7px;
+
+}
+.total-info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.total-price {
+    display: flex;
+    align-self: flex-end;
+}
+.total-dash {
+    text-align: center;
+}
+
+.subtotal-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.size-taurp-price {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.image-upload {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    padding: 0;
+    background: url('../Purchase assets/upload.png') no-repeat center center;
+    background-size: contain;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    cursor: pointer;
+    outline: none;
+
+}
+
+/* Optionally, you can hide the default file input text */
+.image-upload::-webkit-file-upload-button {
+    display: none;
+}
+
+.image-upload::before {
+    display: block;
+    text-align: center;
+    color: #333; /* Text color */
+    font-weight: bold; /* Font weight */
+    line-height: 1.5; /* Adjust line height as needed */
+}
+

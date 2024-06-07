@@ -1,3 +1,8 @@
+<?php
+require('./backend/session.php');
+$_SESSION['type_print'] = 'invalid';
+?>
+
 <!DOCTYPE html>
 <html>
         <head>
@@ -98,7 +103,7 @@
                         window.location.href = "./Homepage-index.php";
                     });
                     document.getElementById("products-redirect").addEventListener("click", function() {
-                        window.location.href = "./Products-index.html";
+                        window.location.href = "./Products-index.php";
                     });
              </script>
         </footer>

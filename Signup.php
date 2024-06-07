@@ -1,6 +1,6 @@
 <?php
     require('./backend/database.php');
-
+    
     session_start();
 
     // if ($_SESSION['session'] == 'invalid' || empty($_SESSION['session'])){
