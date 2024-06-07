@@ -97,13 +97,7 @@ require('./backend/database.php');
                                     <textarea class="textfields" name="instructions" id="instructions" rows="13" cols="50" placeholder="Write down your special instructions" value="None"></textarea>
                                 </div>
 
-                              
-                            </div>
-                              <input type="hidden" name="bindprice" id="bindpricehidden" value="">
-                                <input type="hidden" name="totalpages" id="totalpages" value="">
-                                <input type="hidden" name="total" id="total" value="">
-
-                                <div class="total" id="resibo" style="display: none;">
+                              <div class="total" id="resibo" style="display: none;">
                                     <h1>Confirm Order: </h1>
                                     <hr>
                                     <div class="total-info-container">
@@ -131,6 +125,12 @@ require('./backend/database.php');
                                         <h3>Total: </h3>
                                         <p id="totalprice"></p>
                                     </div>
+                            </div>
+                              <input type="hidden" name="bindprice" id="bindpricehidden" value="">
+                                <input type="hidden" name="totalpages" id="totalpages" value="">
+                                <input type="hidden" name="total" id="total" value="">
+
+                                
                                     
                                 </div>
                             <div class="sidepanel">
