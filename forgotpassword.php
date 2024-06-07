@@ -1,6 +1,11 @@
 
 <?php
     require('./backend/forgot.php');
+    session_start();
+    if ($_SESSION['session'] === 'student' || $_SESSION['session'] === 'admin') {
+        header('Location: ./Homepage-Index.php');
+        exit();
+    }
     
 ?>
 <!DOCTYPE html>

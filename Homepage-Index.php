@@ -315,7 +315,8 @@
                 if (mysqli_num_rows($sqlvalidate) > 0) {
                     $id = $row['id'];
                     $email = $row['username'];
-                    $_SESSION['session'] = 'valid';
+                    $role = $row['role'];
+                    $_SESSION['session'] = $role;
                     $_SESSION['username'] = $email;
                     $_SESSION['user_id'] = $id;
                     echo "<meta http-equiv='refresh' content='0'>";
@@ -324,7 +325,6 @@
         
                 } else {
                     $_SESSION['session'] = 'invalid';
-                    // echo 'Invalid Credentials';
                     echo "<script>alert('Invalid Credentials!')</script>";
                     
                     
