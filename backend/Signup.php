@@ -13,8 +13,8 @@
         $city = $_POST['city']; 
         $postalCode = $_POST['postal']; 
 
-        $query = "INSERT INTO user_credentials (username, password, fname, lname, contactnum, streetNumber, streetName, barangay, city, postal) 
-                VALUES ('$email', '$password', '$fname', '$lname', '$contactnum', '$streetNumber', '$streetName', '$barangay', '$city', '$postalCode')";
+        $query = "INSERT INTO user_credentials (role, username, password, fname, lname, contactnum, streetNumber, streetName, barangay, city, postal) 
+                VALUES ('student', '$email', '$password', '$fname', '$lname', '$contactnum', '$streetNumber', '$streetName', '$barangay', '$city', '$postalCode')";
         
         $result = mysqli_query($conn, $query);
 

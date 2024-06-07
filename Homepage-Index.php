@@ -177,8 +177,8 @@
                            <div></div>
                        </div>
                        <div class="login-right">
-                       <a class="sn" href="Signup.php" style="text-decoration: none; color: white;"><div><p><b>SIGN UP</b></p></div></a>
-                       <a class="sn" href="" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
+                       <a class="sn" href="Signup-index.php" style="text-decoration: none; color: white;"><div><p><b>SIGN UP</b></p></div></a>
+                       <a class="sn" href="forgotpassword.php" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
                        </div>
                        </form>
                    </div>
@@ -204,8 +204,8 @@
                    </div>
                    <div class="login-right">
                        
-                       <a class="sn" href="Signup.php" style="text-decoration: none; color: white;"><div><p><b>SIGN UP</b></p></div></a>
-                       <a class="sn" href="" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
+                       <a class="sn" href="Signup-index.php" style="text-decoration: none; color: white;"><div><p><b>SIGN UP</b></p></div></a>
+                       <a class="sn" href="forgotpassword.php" style="text-decoration: none; color: white;"><div><p><b>FORGOT PASS</b></p></div></a>
                    </div>
                    
                    </form>
