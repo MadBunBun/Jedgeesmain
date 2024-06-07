@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION['session'] === 'valid') {
+    header('Location: ./Homepage-Index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
