@@ -10,4 +10,6 @@ if ($_SESSION['session'] == 'invalid' || empty($_SESSION['session'])){
 }
 
 unset($_SESSION['billing_id']);
+unset($_SESSION['type_print']);
+
 ?>

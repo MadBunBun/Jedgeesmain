@@ -3,8 +3,6 @@
 require('./backend/session.php');
 require('./backend/database.php');
 
-$_SESSION['type_print'] = 'invalid';
-unset($_SESSION['billing_id']);
 
 
 ?>

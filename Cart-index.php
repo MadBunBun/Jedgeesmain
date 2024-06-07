@@ -1,6 +1,5 @@
 <?php
 require('./backend/session.php');
-$_SESSION['type_print'] = 'invalid';
 ?>
 
 <!DOCTYPE html>
