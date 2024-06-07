@@ -1,5 +1,6 @@
 *{
     font-family: 'Inter', sans-serif;
+    color: black;
 }
 body{
     margin: 0px;
@@ -210,6 +211,10 @@ footer {
     position: relative;
     bottom: 14%;
     width: 400;
+}
+
+#resibo-shirt {
+    padding-right: 130px;
 }
 
 .total-info-container {
