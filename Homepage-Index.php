@@ -1,7 +1,7 @@
 
 <?php
     require('./backend/database.php');
-
+    $_SESSION['type_print'] = 'invalid';
     session_start();
 
     // if ($_SESSION['session'] == 'invalid' || empty($_SESSION['session'])){
@@ -58,21 +58,27 @@
                         </div>
                         
                     </div>
-                    
+                    <?php
+
+                    if (!$invalid_session_condition) {
+                    echo '
                     <div class="user-cart"> <!--user and cart*-->
                         <div>
-                            <a href="">
+                            <a href="Userpage index.php">
                                 <img src="Homepage assets/Userpf.png">
                                 <p>User</p>
                             </a>
                         </div>
                         <div>
-                            <a href="">
+                            <a href="Cart-index.php">
                                 <img src="Homepage assets/Cart.png">
                                 <p>Cart</p>
                             </a>
                         </div>
                     </div>
+                    ';
+                    } 
+                    ?>
             </section>
             <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
 
@@ -283,7 +289,7 @@
                     window.location.href = "./Homepage-Index.php";
                 });
                 document.getElementById("products-redirect").addEventListener("click", function() {
-                    window.location.href = "./Products-Index.html";
+                    window.location.href = "./Products-Index.php";
                 });
                 </script>
 
@@ -300,9 +306,14 @@
             } else {
                 $query = "SELECT * FROM user_credentials WHERE username='$username' AND password= md5('$password')";
                 $sqlvalidate = mysqli_query($conn, $query);
-        
+                $row = mysqli_fetch_assoc($sqlvalidate);
+
                 if (mysqli_num_rows($sqlvalidate) > 0) {
+                    $id = $row['id'];
+                    $email = $row['username'];
                     $_SESSION['session'] = 'valid';
+                    $_SESSION['username'] = $email;
+                    $_SESSION['user_id'] = $id;
                     echo "<meta http-equiv='refresh' content='0'>";
 
                     

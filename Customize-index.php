@@ -3,6 +3,10 @@
 require('./backend/session.php');
 require('./backend/database.php');
 
+$_SESSION['type_print'] = 'invalid';
+unset($_SESSION['billing_id']);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,13 +34,13 @@ require('./backend/database.php');
                     
                     <div class="user-cart"> <!--user and cart*-->
                         <div>
-                            <a href="Userpage Index.html">
+                            <a href="Userpage Index.php">
                                 <img src="Customize assests/Userpf.png">
                                 <p>User</p>
                             </a>
                         </div>
                         <div>
-                            <a href="Customize-index.php">
+                            <a href="Cart-index.php">
                                 <img src="Customize assests/Cart.png">
                                 <p>Cart</p>
                             </a>
@@ -135,10 +139,7 @@ require('./backend/database.php');
                             <div class="sidepanel">
                                 <button type="reset" name="reset" id="reset-print"><img src="Customize assests/Reset.png"><br><p>Reset</p></button><br>
                                 <button style="display: block;" type="button" id="checkprice"><img src="Customize assests/Pay.png"><br><p>Check Price</p></button>
-                                <button style="display: block;" type="submit" name="submit_print" id="submit"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
-
-                                
-                               
+                                <button style="display: block;" type="submit" name="submit_print" id="submit_print"><img src="Customize assests/Pay.png"><br><p>Pay</p></button>
                             </div>
                          </form>
                         </div>
@@ -172,7 +173,7 @@ require('./backend/database.php');
                         </div> -->
                         <div>
                             <label for="instructions" id="instructions">Special instructions:</label><br><br>
-                            <textarea class="textfields" name="instructions-taurp" id="textfields" rows="13" cols="50">Write down your special instructions</textarea>
+                            <textarea class="textfields" name="instructions-taurp" id="textfields" rows="13" cols="50" value="None" placeholder="Write down your special instructions"></textarea>
                         </div>
 
                         <div class="total" id="resibo-taurp" style="display: none;">
@@ -192,22 +193,19 @@ require('./backend/database.php');
 
                                         </div>
                                         <div class="total-prices">
-                                            <b><p class="total-dash" id="num-taurp-price"></p></b>
-                                            <b><p class="total-dash" id="with-layout-dash"></p></b> 
-                                            <b><p class="total-dash" id="layout-price"></p></b>
+                                            <p class="total-dash" id="num-taurp-price"></p>
+                                            <p class="total-dash" id="with-layout-dash"></p>
+                                            <p class="total-dash" id="layout-price"></p>
                                             
                                         </div>
-
-
                                     </div>
                                     <hr>
                                     
                                     <div class="subtotal-container">
                                         <h3>Total: </h3>
-                                        <b><p id="totalprice-taurp"></p></b>
+                                        <p id="totalprice-taurp"></p>
                                     </div>
-                                    
-                                </div>
+                        </div>
                     </div>
 
                     <input type="hidden" name="taurp-price" id="taurp-price">
@@ -310,7 +308,7 @@ require('./backend/database.php');
                     window.location.href = "./Homepage-index.php";
                 });
                 document.getElementById("products-redirect").addEventListener("click", function() {
-                    window.location.href = "./Products-index.html";
+                    window.location.href = "./Products-index.php";
                 });
          </script>
 
