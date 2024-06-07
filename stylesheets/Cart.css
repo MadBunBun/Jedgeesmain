@@ -1,3 +1,4 @@
+
 *{
     font-family: 'Inter', sans-serif;
 }
@@ -31,13 +32,15 @@ body{
     justify-content: space-evenly;
     max-width: 70%;
 }
-.Nav div{
+.Nav button{
     margin: 5%;
     background-image: linear-gradient(to right, #d9d9d9, #737373);
     background-size: auto;
     padding: 7px 30px 7px 30px;
     border-radius: 7px;
     color: white;
+    border: none;
+
 }
 .Nav a{
     text-decoration: none;
@@ -74,6 +77,29 @@ body{
     border-radius: 20px;
     padding: 3px
 }
+
+.Logout {
+    margin: 5%;
+}
+
+.Logout button{
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+.Logout img {
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3px
+}
+
 footer {
     margin: 0px;
     width: 100%;
@@ -119,6 +145,76 @@ footer {
     width: 700px;
     height: 700px;
 }
+.Product-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+.order{
+    border-collapse: collapse;
+    margin: 4%;
+    gap: 2%;
+    font-size: 16px;
+    min-width: 700px;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+}
+.order thead tr {
+    background-color: #737373;
+    color: white;
+    
+    font-weight: bold;
+}
+.order th, .order td{
+    padding: 12px 15px;
+
+}
+
+.order tbody tr{
+    border-bottom: #737373;
+
+}
+.order tbody tr:nth-of-type(even){
+    background-color: #d9d9d9e6;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Receiptcontainer{
+    background-color: #d9d9d9E6;
+    width: 350px;
+    height: 350px;
+    margin: 5% 0 5% 0;
+    border-radius: 7px;
+
+}
+.total-info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.total-price {
+    display: flex;
+    align-self: flex-end;
+}
+.total-dash {
+    text-align: center;
+}
+
+.subtotal-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .Cartlist{
     width: 100%;
     margin: 5% 0 5% 0;
