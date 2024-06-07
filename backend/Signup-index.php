@@ -4,7 +4,6 @@ require('./database.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
 $fname = $_POST['fname'];
-$mname = $_POST['mname'];
 $lname = $_POST['lname'];
 $contactnum = $_POST['contactnum'];
 $streetNumber = $_POST['streetNumber'];
