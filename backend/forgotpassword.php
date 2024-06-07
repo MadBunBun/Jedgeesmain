@@ -1,7 +1,7 @@
 <?php
-require('./backend/database.php');
+require('/database.php');
 
-function generateRandomCode($length = 8) {
+/*function generateRandomCode($length = 8) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
@@ -9,7 +9,7 @@ function generateRandomCode($length = 8) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
-}
+}*/
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
