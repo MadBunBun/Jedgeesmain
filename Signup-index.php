@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['session'] === 'student' || $_SESSION['session'] === 'admin') {
+if ($_SESSION['session'] === 'customer' || $_SESSION['session'] === 'admin') {
     header('Location: ./Homepage-Index.php');
     exit();
 }

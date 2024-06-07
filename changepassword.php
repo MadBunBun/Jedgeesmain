@@ -22,7 +22,7 @@ if (empty($_SESSION['token'])) {
                 <h2>Change Password</h2>
             </div>
             <div class="forgotpassword">
-                <form id="form" action="backend/forgot.php" method="POST" onsubmit="return checkPasswords()">
+                <form id="form" method="POST">
                     <label for="newPassword">New Password:</label><br>
                     <input type="password" id="newPassword" name="newPassword" required><br><br>
                     <label for="confirmPassword">Confirm New Password:</label><br>
@@ -33,8 +33,8 @@ if (empty($_SESSION['token'])) {
 
             <?php 
                 if (isset($_POST['changePassword'])) {
-                    $newPassword = $_POST(['newPassword']);
-                    $confirmPassword = $_POST(['confirmPassword']);
+                    $newPassword = $_POST['newPassword'];
+                    $confirmPassword = $_POST['confirmPassword'];
                     if ($newPassword !== $confirmPassword) {
                         echo "<div class='notification-box error'>
                                 <p>New Password and Confirm Password must match!</p>

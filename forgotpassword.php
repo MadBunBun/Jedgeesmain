@@ -2,7 +2,7 @@
 <?php
     require('./backend/forgot.php');
     session_start();
-    if ($_SESSION['session'] === 'student' || $_SESSION['session'] === 'admin') {
+    if ($_SESSION['session'] === 'customer' || $_SESSION['session'] === 'admin') {
         header('Location: ./Homepage-Index.php');
         exit();
     }
@@ -43,9 +43,10 @@
                         
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
-                        $name = $row['fname'];
+                        
 
                         if (mysqli_num_rows($result) > 0) {
+                            $name = $row['fname'];
                             session_start();
                             $token = generateToken();
                             $_SESSION['token'] = $token;

@@ -3,8 +3,6 @@
 require('./backend/session.php');
 require('./backend/database.php');
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -31,16 +29,18 @@ require('./backend/database.php');
                         </div>
                     </div>
                     
-                    <div class="user-cart"> <!--user and cart*-->
+                    <?php 
+                        if ($_SESSION['session'] === 'customer') {
+                            echo '<div class="user-cart"> <!--user and cart*-->
                         <div>
                             <a href="Userpage Index.php">
-                                <img src="Customize assests/Userpf.png">
+                                <img src="Product assets/Userpf.png">
                                 <p>User</p>
                             </a>
                         </div>
                         <div>
                             <a href="Cart-index.php">
-                                <img src="Customize assests/Cart.png">
+                                <img src="Product assets/Cart.png">
                                 <p>Cart</p>
                             </a>
                         </div>
@@ -50,7 +50,21 @@ require('./backend/database.php');
                                 <p>Logout</p>
                             </button>
                        </form>
+                    </div>';
+                        } else if ($_SESSION['session'] === 'admin') {
+                            echo '
+                            <div class="user-cart"> <!--user and cart*-->
+                        
+                        <form action="backend/logout.php" method="POST" class="Logout">
+                            <button type="submit" name="logout">
+                                <img src="Homepage assets/Logout.png" alt="">
+                                <p>Logout</p>
+                            </button>
+                       </form>
                     </div>
+                            ';
+                        }
+                    ?>
             </section>
             <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
             <div id="backgroundlogo">

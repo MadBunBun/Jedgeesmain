@@ -1,6 +1,24 @@
 <?php
 require('./backend/session.php');
 require('./backend/database.php');
+$query = "SELECT * FROM home_edit WHERE id = 1;";
+
+$result = mysqli_query($conn, $query);
+
+
+if ($result || mysqli_num_rows($result) > 0) {
+
+    $row = mysqli_fetch_assoc($result);
+    $header_text = $row['above_text'];
+
+
+
+
+}
+
+else {
+    echo "<script>console.log('Error: .$query');</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +39,9 @@ require('./backend/database.php');
                             <button id="customs-redirect"><b>Customs</b></b>
                     </div>
                     </div>
-                    
-                    <div class="user-cart"> <!--user and cart*-->
+                    <?php 
+                        if ($_SESSION['session'] === 'customer') {
+                            echo '<div class="user-cart"> <!--user and cart*-->
                         <div>
                             <a href="Userpage Index.php">
                                 <img src="Product assets/Userpf.png">
@@ -41,9 +60,24 @@ require('./backend/database.php');
                                 <p>Logout</p>
                             </button>
                        </form>
+                    </div>';
+                        } else if ($_SESSION['session'] === 'admin') {
+                            echo '
+                            <div class="user-cart"> <!--user and cart*-->
+                        
+                        <form action="backend/logout.php" method="POST" class="Logout">
+                            <button type="submit" name="logout">
+                                <img src="Homepage assets/Logout.png" alt="">
+                                <p>Logout</p>
+                            </button>
+                       </form>
                     </div>
+                            ';
+                        }
+                    ?>
+                    
             </section>
-            <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
+            <div class="lower-grey"><p><?php echo $header_text;?></p></div>
             
             <div class="title"><h1> Jedgees Products</h1></div>
 
