@@ -32,12 +32,12 @@ require('./backend/database.php');
                         </div>
                         
                         
-                        <div>
-                            <a href="Cart-index.html">
-                                <img src="Cart assets/Cart.png">
-                                <p>Cart</p>
-                            </a>
-                        </div>
+                        <form action="backend/logout.php" method="POST" class="Logout">
+                            <button type="submit" name="logout">
+                                <img src="Homepage assets/Logout.png" alt="">
+                                <p>Logout</p>
+                            </button>
+                       </form>
     
                     </div>
             </section>
@@ -102,16 +102,30 @@ require('./backend/database.php');
 
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+            <?php 
+
+            $query = "SELECT * FROM purchase";
+            $result = mysqli_query($conn, $query);
+            $numrows = mysqli_num_rows($result);
+            $total = 0;
+
+            if ($result && $numrows > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $total += $row['paid_amount'];
+                }
+            }
+            
+            echo "
             <script>
                   const ctx = document.getElementById('saleschart');
 
                     new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        labels: ['week1', 'week2', 'week3', 'week4'],
                         datasets: [{
                         label: 'sales',
-                        data: [1200, 1900, 300, 500, 2000, 300],
+                        data: [$total, 0, 0, 0],
                         borderWidth: 1
                         }]
                     },
@@ -124,6 +138,9 @@ require('./backend/database.php');
                     }
                     });
             </script>
+            ";
+
+            ?>
         </body>
         <footer><!--footer-->
             <div class="footer-container">
