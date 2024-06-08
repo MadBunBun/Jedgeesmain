@@ -47,12 +47,7 @@ else {
                         <p>User</p>
                     </a>
                 </div>
-                <div>
-                    <a href="Cart-index.php">
-                        <img src="Userpage assets/Cart.png">
-                        <p>Cart</p>
-                    </a>
-                </div>
+            
 
                 <form action="backend/logout.php" method="POST" class="Logout">
                             <button type="submit" name="logout">
@@ -212,7 +207,6 @@ else {
                     echo "<script>console.log('Error moving the uploaded file.');</script>";
                 }
             } else {
-                // Update the database with new information without changing the image
                 $query = "UPDATE user_credentials SET 
                         fname = '$fname', 
                         lname = '$lname', 
@@ -235,11 +229,7 @@ else {
         }
         ?>
 
-    <section class="product_status">
-        <div class="status-container">
-            <div class="status-title"><h2>Product Status</h2></div>
-        </div>
-    </section>
+
     <div class="backgroundlogo"><img src="Userpage assets/LOGO.png" alt="logo"></div>
 </body>
 <footer><!--footer-->

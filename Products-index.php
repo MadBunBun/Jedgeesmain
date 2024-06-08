@@ -48,12 +48,7 @@ else {
                                 <p>User</p>
                             </a>
                         </div>
-                        <div>
-                            <a href="Cart-index.php">
-                                <img src="Product assets/Cart.png">
-                                <p>Cart</p>
-                            </a>
-                        </div>
+                        
                         <form action="backend/logout.php" method="POST" class="Logout">
                             <button type="submit" name="logout">
                                 <img src="Homepage assets/Logout.png" alt="">
@@ -64,7 +59,12 @@ else {
                         } else if ($_SESSION['session'] === 'admin') {
                             echo '
                             <div class="user-cart"> <!--user and cart*-->
-                        
+                        <div>
+                            <a href="dashboard-index.php">
+                                <img src="Homepage assets/Userpf.png">
+                                <p>Dashboard</p>
+                            </a>
+                        </div> 
                         <form action="backend/logout.php" method="POST" class="Logout">
                             <button type="submit" name="logout">
                                 <img src="Homepage assets/Logout.png" alt="">
@@ -82,12 +82,23 @@ else {
             <div class="title"><h1> Jedgees Products</h1></div>
 
             <div class="product_container">
-                <script>productlist();</script>
+                
             </div>
 
             
             
-                
+            <div class="popup">
+                <span class="close">&times;</span>
+                <img id="popup-img" src="" alt="">
+                <p>Product name: <span id="popup-name"></span></p>
+                <p>&#8369; <span id="popup-price"></span></p>
+                <form id="popup-form" enctype="multipart/form-data">
+                    <input type="file" name="document" required>
+                    <br>
+                    <button id="confirm-purchase">Buy</button>
+                </form>
+            </div>
+<div class="overlay"></div>
            
 
 

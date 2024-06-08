@@ -33,7 +33,7 @@ body{
     justify-content: space-evenly;
     max-width: 70%;
 }
-.Nav button{
+.Nav div{
     margin: 5%;
     background-image: linear-gradient(to right, #d9d9d9, #737373);
     background-size: auto;
@@ -46,6 +46,45 @@ body{
 .Nav a{
     text-decoration: none;
     color: white;
+}
+
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 70%;
+}
+.Nav button{
+    margin: 5%;
+    background-image: linear-gradient(to right, #d9d9d9, #737373);
+    background-size: auto;
+    padding: 7px 30px 7px 30px;
+    border-radius: 7px;
+    color: white;
+    border: none;
+
+}
+
+.Logout {
+    margin: 5%;
+}
+
+.Logout button{
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+.Logout img {
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3px
 }
 
 .lower-grey{
@@ -71,28 +110,6 @@ body{
     color: black;
 }
 .user-cart img{
-    width: 20px;
-    height: 20px;
-    margin: 0px 10px 0px 10px;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 3px
-}
-
-.Logout {
-    margin: 5%;
-}
-
-.Logout button{
-    border: none;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    padding: 0;
-}
-.Logout img {
     width: 20px;
     height: 20px;
     margin: 0px 10px 0px 10px;
@@ -158,6 +175,7 @@ footer {
     width: 200px;
     height: 200px;
     font-size: 20px;
+    margin: 2%;
 }
 #prod-img{
     height: 155px;
@@ -198,7 +216,133 @@ footer {
     gap: 5%;
     flex-wrap: wrap;
 }
-.product_container div{
-    margin: 2%;
+
+.prod-add{
+    border: 2px #737373;
+    border-style: dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+}
+.additem{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3% 0 3% 0;
+}
+.popup, .overlay {
+    display: none; /* Hidden by default */
 }
 
+.popup.active, .overlay.active {
+    display: block; /* Shown when the class 'active' is added */
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.popup img {
+    max-width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.closebtn {
+    position: absolute;
+    border-radius: 100px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+    top: 38.5vh;
+    left: 110vh;
+}
+.popupadd{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 1001;
+}
+.addprod{
+    height: 500px;
+    width: 500px;
+    background-color: #d9d9d9E6;
+    border-radius: 7px;
+    color: white;
+    font-size: 12px;
+    padding: 1%;
+}
+form .input{
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+}
+form label{
+    font-size: 15px;
+    margin: 2% 0 2% 0;
+
+}
+.editoption{
+    width: 200px;
+    height: 200px;
+    border: 2px #737373;
+    border-radius: 7px;
+    border-style: dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 20;
+}
+.product_container_admin{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    flex-wrap: wrap;
+}
+
+.popupbuy{
+    width: 500px;
+    height: 500px;
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    position: fixed;
+    z-index: 1001;
+}

@@ -73,13 +73,7 @@
                                 <img src="Homepage assets/Userpf.png">
                                 <p>User</p>
                             </a>
-                        </div>
-                        <div>
-                            <a href="Cart-index.php">
-                                <img src="Homepage assets/Cart.png">
-                                <p>Cart</p>
-                            </a>
-                        </div>
+                        </div>  
                         <form action="backend/logout.php" method="POST" class="Logout">
                             <button type="submit" name="logout">
                                 <img src="Homepage assets/Logout.png" alt="">
@@ -91,7 +85,12 @@
                     } else if ($_SESSION['session'] === 'admin') {
                         echo '
                     <div class="user-cart"> <!--user and cart*-->
-                        
+                        <div>
+                            <a href="dashboard-index.php">
+                                <img src="Homepage assets/Userpf.png">
+                                <p>Dashboard</p>
+                            </a>
+                        </div>  
                         <form action="backend/logout.php" method="POST" class="Logout">
                             <button type="submit" name="logout">
                                 <img src="Homepage assets/Logout.png" alt="">

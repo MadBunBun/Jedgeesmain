@@ -195,6 +195,67 @@ $billing_id = $_SESSION['billing_id'];
                     </div>
                     ";
                }
+               else if ($type === 'shirt_customization') {
+                $query = "SELECT * FROM shirt_customization WHERE billing_id='$billing_id'";
+                $result = mysqli_query($conn, $query);
+
+                if($result) {
+                    $row = mysqli_fetch_assoc($result);
+
+                    $num_shirt = $row[''];
+                    $printshirt_size = $row['feet_2'];
+                    $shirt_size = $row['copies'];
+                    $shirt_material = $row['with_layout'];
+                    $instructions = $row['taurp_price'];
+                    $shirt_price = $row['copies_price'];
+                    $vinyl_price = $row['layout_price'];
+                    $print_sizeprice = $row['total_price'];
+                    $total_price = $row['down_payment'];
+
+                    
+                }
+                echo "
+                <style> 
+                    .Receiptcontainer {
+                        height: 382px;
+                    }
+                    </style>
+
+                <div class=\"Receiptcontainer\" id=\"resibo\">
+                    <div class=\"title\">
+                        <img src=\"Purchase assets/handshake.png\" alt=\"handshake\">
+                        <h2>Jedgees Receipt</h2>
+                    </div>
+                    <hr>
+                    <div class=\"size-taurp-price\">
+                        <p><b>Size of Taurpalin: </b><span id=\"size-taurp\">" . $feet_1 . "x" . $feet_2 . "</span></p>
+                        <p class=\"total-dash\" id=\"size-taurp-price\">" . number_format($taurp_price, 2) . "</p>
+                    </div>
+                    <hr>
+                    <div class=\"total-info-container\">
+                        <div class=\"total-info\">
+                            <p><b>Number of Copies: </b><span id=\"num-taurp\">" . $copies . "</span></p>
+                            <p><b>With our layout?: </b><span id=\"layout\">" . $with_layout . "</span></p>
+                            <p style=\"display: " . $display_value . ";\" id=\"layout-price-display\"><b>Layout Price: </b></p>
+                            <p><b>Total: </b><span id=\"layout\"></span></p>
+
+                        </div>
+                        <div class=\"total-prices\">
+                            <p class=\"total-dash\" id=\"num-taurp-price\">" . number_format($copies_price, 2) . "</p>
+                            <p class=\"total-dash\" id=\"with-layout-dash\">-</p>
+                            <p style=\"display: " . $display_value . ";\" class=\"total-dash\" id=\"layout-price\">" . number_format($layout_price, 2) . "</p>
+                            <p id=\"total-dash\">" . number_format($total_price, 2) . "</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class=\"subtotal-container\">
+                        <h3>Down Payment (To be paid): </h3>
+                        <p id=\"totalprice-taurp\">₱" . number_format($down_payment, 2) . "</p>
+                        
+                    </div>
+                </div>
+                ";
+           }
                ?>
         </div>
         <div class="background">

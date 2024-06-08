@@ -1,6 +1,6 @@
 *{
     font-family: 'Inter', sans-serif;
-    
+    color: black;
 }
 body{
     margin: 0px;
@@ -16,10 +16,6 @@ body{
 .Navigation{
     max-width: 100%;
     display: flex;
-}
-
-.Posters * {
-    color: black;
 }
 
 .logo-nav{
@@ -200,28 +196,6 @@ footer {
     background-color: #898989E6;
     border-radius: 7px;
     color: white;
-}
-
-.Logout {
-    margin: 5%;
-}
-
-.Logout button{
-    border: none;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    padding: 0;
-}
-.Logout img {
-    width: 20px;
-    height: 20px;
-    margin: 0px 10px 0px 10px;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 3px
 }
 .sidepanel button{
     border: none;
