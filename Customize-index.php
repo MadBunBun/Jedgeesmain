@@ -13,7 +13,11 @@ require('./backend/database.php');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="scripts/customize-print.js"></script>
         <script src="scripts/customize-taurp.js"></script>
+<<<<<<< Updated upstream
         <script src="scripts/customize-tshirt.js"></script>
+=======
+        <script src="scripts/customize-shirt.js"></script>
+>>>>>>> Stashed changes
 
         
     </head>
@@ -232,13 +236,21 @@ require('./backend/database.php');
                             <input type="number" name="numShirt" class="textinputs" id="numShirt">
                             <br><br>
                             <label for="papertype">Size of Print:</label><br><br>
+<<<<<<< Updated upstream
                             <select name="print-size_shirt" id="print-size_shirt" class="print-size_shirt">
+=======
+                            <select name="print-size_shirt" id="dropdowns" class="print-size_shirt">
+>>>>>>> Stashed changes
                                 <option value="8x11">8x11</option>
                                 <option value="4x7">4x7</option>
                                 <option value="2x5">2x5</option>
                             </select><br><br>
                             <label for="papertype">Size of Shirt:</label><br><br>
+<<<<<<< Updated upstream
                             <select name="shirt_size" id="shirt_size" class="shirt_size">
+=======
+                            <select name="shirt_size" id="dropdowns" class="shirt_size">
+>>>>>>> Stashed changes
                                 <option value="XS">XS</option>
                                 <option value="S">S</option>
                                 <option value="M">M</option>
@@ -246,21 +258,36 @@ require('./backend/database.php');
                                 <option value="XL">XL</option>
                             </select><br><br>
                             <label for="shirtmaterial">Type of Material:</label><br><br>
+<<<<<<< Updated upstream
                             <select name="shirt_material" id="shirt_material" class="shirt_material">
                                 <option value="Soft Cotton">Soft Poli-Cotton Shirt</option>
                                 <option value="Prem Cotton">Premium Cotton Shirt</option>
+=======
+                            <select name="shirt_material" id="dropdowns" class="shirt_material">
+                                <option value="softcotton">Soft Poli-Cotton Shirt</option>
+                                <option value="premcotton">Premium Cotton Shirt</option>
+>>>>>>> Stashed changes
                             </select><br><br>
                         </div>
                         <div>
                             <label for="docu">Upload your Design:</label><br><br>
                             <input type="file" id="docu" name="file-shirt"><br><br>
                             <label for="print type">Type of print:</label><br>
+<<<<<<< Updated upstream
                             <select name="typevinyl" id="typevinyl" class="typevinyl">
                                 <option value="Holo">Holographic</option>
                                 <option value="Metal">Metallic</option>
                                 <option value="Glitter">Glitterized</option>
                                 <option value="Glow">Glow in the dark</option>
                                 <option value="Gamuza">Gamuza</option>
+=======
+                            <select name="typevinyl" id="dropdowns" class="typevinyl">
+                                <option value="holo">Holographic</option>
+                                <option value="metal">Metallic</option>
+                                <option value="glitter">Glitterized</option>
+                                <option value="glow">Glow in the dark</option>
+                                <option value="gamuza">Gamuza</option>
+>>>>>>> Stashed changes
                             </select><br><br>
                         </div>
                         <div>

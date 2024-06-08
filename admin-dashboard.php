@@ -1,54 +1,14 @@
+<?php 
+require('./backend/session.php');
+require('./backend/database.php');
+
+
+?>
 <!DOCTYPE html>
 <html>
         <head>
-            <link rel="stylesheet" href="stylesheets/Cart.css" type="text/css">
+            <link rel="stylesheet" href="stylesheets/admin-dashboard.css" type="text/css">
             <title>Jedgees</title>
-            <style>
-                .sales{
-                    border-collapse: collapse;
-                    margin: 5%;
-                    font-size: 16px;
-                    min-width: 1200px;
-                    border-radius: 7px 7px 0 0;
-<<<<<<< Updated upstream
-                    overflow: hidden;
-=======
->>>>>>> Stashed changes
-                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-                }
-                .sales thead tr {
-                    background-color: #737373;
-                    color: white;
-                    text-align: left;
-                    font-weight: bold;
-                }
-                .sales th, .sales td{
-                    padding: 12px 15px;
-
-                }
-<<<<<<< Updated upstream
-
-=======
-                .sales tbody{
-                    overflow-y: auto;
-                }
->>>>>>> Stashed changes
-                .sales tbody tr{
-                    border-bottom: #737373;
-
-                }
-                .sales tbody tr:nth-of-type(even){
-                    background-color: #d9d9d9e6;
-
-                }
-                .tablecontainer{
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            </style>
         </head>
         <body>
             <div class="uppergrey"></div>
@@ -81,9 +41,37 @@
     
                     </div>
             </section>
+            
             <div class="lower-grey"><p>You need it. We print it. You love it.</p></div>
             <div class="background"><img src="Cart assets/LOGO.png" alt=""></div>
-            <div class="tablecontainer">
+            <section class="dashboard">
+
+                <div class="saleschart">
+                        <canvas id="saleschart"></canvas>
+
+                </div>
+
+                <table class="prodstatus">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Product name</th>
+                            <th>Reference</th>
+                            <th>Contanct number</th>
+                            <th>Address</th>
+                            <th>product status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                 </table>
                  <table class="sales">
                     <thead>
                         <tr>
@@ -106,13 +94,36 @@
                         </tr>
                     </tbody>
                  </table>
-            </div>
+            </section>
+                 
            
 
 
 
 
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+            <script>
+                  const ctx = document.getElementById('saleschart');
 
+                    new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                        label: 'sales',
+                        data: [1200, 1900, 300, 500, 2000, 300],
+                        borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                        }
+                    }
+                    });
+            </script>
         </body>
         <footer><!--footer-->
             <div class="footer-container">

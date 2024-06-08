@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categories = [...new Set(product.map(item => item))];
     let i = 0;
 
-    document.getElementsByClassName('product_container')[0].innerHTML = categories.map((item, index) => {
+    document.getElementsByClassName('product_container')[0].innerHTML = categories.map(item => {
         var { image, name, price } = item;
         return `
             <div class="prod">
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="item-desc">
                     <p>${name}<br>&#8369;${price}</p>
                     <div></div>
-                    <button type="button" onclick="addtocart(${index})">
+                    <button type="button" onclick="showPopup(${i})">
                         <img src="Homepage assets/arrowbtn.png" id="product-arrow">
                     </button>
                 </div>
@@ -32,13 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }).join('');
 
-    
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    window.showPopup = function(a) {
+        const product = categories[a];
+        document.getElementById('popup-name').textContent = product.name;
+        document.getElementById('popup-price').textContent = product.price;
+        document.getElementById('popup-img').src = `backend/product images/${product.image}`;
+        
+        document.querySelector('.popup').classList.add('active');
+        document.querySelector('.overlay').classList.add('active');
+        
+        document.getElementById('confirm-purchase').onclick = function(event) {
+            event.preventDefault();
+            const formData = new FormData(document.getElementById('popup-form'));
+            formData.append('productName', product.name);
+            formData.append('productPrice', product.price);
+            fetch('backend/upload.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text()).then(data => {
+                alert(`Product purchased: ${product.name}\nResponse: ${data}`);
+                document.querySelector('.popup').classList.remove('active');
+                document.querySelector('.overlay').classList.remove('active');
+            }).catch(error => console.error('Error:', error));
+        };
+    };
 
-   
-    window.addtocart = function(a) {
-        console.log('Adding to cart:', categories[a]);
-        cart.push({ ...categories[a] });
-        localStorage.setItem('cart', JSON.stringify(cart)); 
+    document.querySelector('.close').onclick = function() {
+        document.querySelector('.popup').classList.remove('active');
+        document.querySelector('.overlay').classList.remove('active');
+    };
+
+    document.querySelector('.overlay').onclick = function() {
+        document.querySelector('.popup').classList.remove('active');
+        document.querySelector('.overlay').classList.remove('active');
     };
 });

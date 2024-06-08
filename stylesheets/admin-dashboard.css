@@ -1,11 +1,8 @@
 *{
     font-family: 'Inter', sans-serif;
-    color: black;
 }
 body{
     margin: 0px;
-    overflow-x: hidden;
-
 }
 .uppergrey{
     background-color: #d9d9d9;
@@ -34,15 +31,17 @@ body{
     justify-content: space-evenly;
     max-width: 70%;
 }
-.Nav button{
+.Nav div{
     margin: 5%;
     background-image: linear-gradient(to right, #d9d9d9, #737373);
     background-size: auto;
     padding: 7px 30px 7px 30px;
     border-radius: 7px;
     color: white;
-    border: none;
-
+}
+.Nav a{
+    text-decoration: none;
+    color: white;
 }
 
 .lower-grey{
@@ -75,9 +74,6 @@ body{
     border-radius: 20px;
     padding: 3px
 }
-
-/*footer*/
-
 footer {
     margin: 0px;
     width: 100%;
@@ -110,138 +106,95 @@ footer {
     height: 30px;
     margin-right: 3%;
 }
-#backgroundlogo{
-    position: fixed;
-    z-index: -1;
+.background{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-
-}
-#backgroundlogo img{
+    position: fixed;
+    z-index: -1;
     opacity: 0.7;
+}
+.background img{
     width: 700px;
     height: 700px;
 }
-.paperprints{
-    width: 90%;
-    padding: 2%;
-    background-color: #d9d9d9E6;
+.prodstatus{
+    border-collapse: collapse;
+    margin: 3% 0 0 0;
+    font-size: 16px;
+    min-width: 1200px;
+    min-height: 500px;
     border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-.forms{
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-}
-.sidepanel{
-    width: 100px;
-    height: 400px;
-    background-color: white;
-    /* margin-right: 10%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-}
-.form-left{
-    flex: 3;
-    display: flex;
-    justify-content: start;
-}
-
-
-.form-left div{
-    margin: 0 3% 0 3%;
-}
-.textinputs{
-    width: 160px;
-    height: 25px;
-    border-radius: 7px;
-    border: none;
-    margin: 2%;
-}
-
-.taurp-size {
-    width: 60px !important;
-}
-#dropdowns{
-    width: 160px;
-    height: 25px;
-    border-radius: 7px;
-    border: none;
-    margin: 2%;
-}
-.textfields{
-    border: none;
-    border-radius: 7px;
-}
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 2% 0 2% 0;
-}
-.Tarpaulins{
-    width: 90%;
-    padding: 2%;
-    background-color: #b9b9b9E6;
-    border-radius: 7px;
-}
-.Posters{
-    width: 90%;
-    padding: 2%;
-    background-color: #898989E6;
-    border-radius: 7px;
+.prodstatus thead tr {
+    background-color: #737373;
     color: white;
+    text-align: left;
+    font-weight: bold;
 }
-.sidepanel button{
-    border: none;
-    background: none;
+.prodstatus th, .prodstatus td{
+    padding: 12px 15px;
+
 }
-.sidepanel img{
-    width: 50px;
-    height: 50px;
+.prodstatus tbody{
+    overflow-y: auto;
+}
+.prodstatus tbody tr{
+    border-bottom: #737373;
+
+}
+.prodstatus tbody tr:nth-of-type(even){
+    background-color: #d9d9d9e6;
+
+}
+.sales{
+    border-collapse: collapse;
+    margin: 3% 0 0 0;
+    font-size: 16px;
+    min-width: 1200px;
+    min-height: 500px;
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.sales thead tr {
+    background-color: #737373;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+
+}
+.sales th, .sales td{
+    padding: 12px 15px;
+
+}
+.sales tbody{
+    overflow-y: auto;
+}
+.sales tbody tr{
+    border-bottom: #737373;
+
+}
+.sales tbody tr:nth-of-type(even){
+    background-color: #d9d9d9e6;
+
 }
 
-.total {
-    margin-left: 0 !important;
-    position: relative;
-    bottom: 14%;
-    width: 400;
-}
-
-#resibo-shirt {
-    padding-right: 130px;
-}
-
-.total-info-container {
+.dashboard {
     display: flex;
-    justify-content: space-between;
-    
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 2%;
+    gap: 3%;
 }
-
-.total-price {
-    align-self: flex-end;
+#saleschart{
+    min-width: 1200px;
+    min-height: 500px;
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #d9d9d9e6;
 }
-
-.total-dash {
-    text-align: center;
-}
-
-.subtotal-container {
-    margin: 0 !important;
-    display: flex;
-    justify-content: space-between;
-}
-
-.size-taurp-price {
-    display: flex;
-    justify-content: space-between;
-}
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
